@@ -172,4 +172,5 @@ exports.js = js;
 exports.watch = watch;
 exports.html = html;
 exports.fonts = fonts;
+exports.build = parallel(css, fonts, html, js, compress);
 exports.default = parallel(css, fonts, watch, html, compress);
