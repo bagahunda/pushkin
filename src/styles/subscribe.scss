@@ -1,0 +1,56 @@
+.subscribe {
+  padding: 95px 0;
+  background-color: #F8F8F8;
+}
+
+.subscribe__title {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 46px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.subscribe__form {
+  position: relative;
+  margin-top: 35px;
+
+  svg {
+    width: 24px;
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+  }
+}
+.agreement {
+  margin-top: 25px;
+}
+
+.check {
+  padding-left: 1.2em;
+}
+
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.check__box {
+  position: absolute;
+  margin-left: -1.2em;
+  margin-top: 0.4em;
+  width: 0.7em;
+  height: 0.7em;
+  box-shadow: 0 0 0 0.1em #4F4F4F;
+  background-color: #ffffff;
+}
+
+.check__input:checked + .check__box {
+  background-image: url('../images/check.svg');
+  background-size: contain;
+  background-position: center;
+}

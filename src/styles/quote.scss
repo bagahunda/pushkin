@@ -1,0 +1,29 @@
+.blockquote {
+  padding: 130px 0 100px;
+
+  .col-10 {
+    position: relative;
+    &:before {
+      content: url('../images/quote.svg');
+      width: 116px;
+      height: 85px;
+      position: absolute;
+      top: -39px;
+      left: -80px;
+      opacity: 0.5;
+    }
+  }
+
+  blockquote {
+    position: relative;
+    margin-bottom: 1em;
+    font-weight: 300;
+    font-style: italic;
+    color: #333333;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 700;
+  }
+}
