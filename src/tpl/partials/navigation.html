@@ -1,16 +1,48 @@
 <nav class="nav">
-  <div class="container justify-content-between">
-    <a href="#" class="nav__link">книги</a>
-    <a href="#" class="nav__link">творчество</a>
-    <a href="#" class="nav__link">одежда и аксессуары</a>
-    <a href="#" class="nav__link">украшения</a>
-    <a href="#" class="nav__link">декор</a>
-    <a href="#" class="nav__link">дети</a>
-    <a href="#" class="nav__link">канцелярия</a>
-    <a href="#" class="nav__link">коллекции</a>
-    <a href="#" class="nav__link">акции</a>
-    <a href="#" class="nav__link">подарки</a>
-  </div>
+  <ul class="container justify-content-between">
+    <li class="nav__link nav__link--submenu">
+      <a href="#">
+      книги
+      </a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">творчество</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">одежда и аксессуары</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">украшения</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">декор</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">дети</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">канцелярия</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">коллекции</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">акции</a>
+      {{> submenu}}
+    </li>
+    <li class="nav__link nav__link--submenu">
+      <a href="#">подарки</a>
+      {{> submenu}}
+    </li>
+  </ul>
   <span class="nav__close js-close-menu">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

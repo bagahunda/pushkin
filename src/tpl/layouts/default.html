@@ -16,9 +16,11 @@
     <meta name="theme-color" content="#003982">
     <title>{{ title }}</title>
 </head>
-<body id="logo-top">
-    {{> header }}
-    {{> navigation }}
+<body id="logo-top" class="preload">
+    <div class="top">
+        {{> header }}
+        {{> navigation }}
+    </div>
     {{> decor }}
     {{> ideas }}
     {{> leaders }}
@@ -28,7 +30,7 @@
     {{> subscribe }}
     {{> body }}
     {{> footer }}
-    <script src="dist/js/lib.js?v=1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="dist/js/main.js?v=1.0.0"></script>
 </body>
 </html>

@@ -1,3 +1,11 @@
+.top {
+  position: fixed;
+  width: 100%;
+  background: white;
+  top: 0;
+  z-index: 999;
+}
+
 .header {
   padding: 30px 0 18px;
 
@@ -11,6 +19,12 @@
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+
+  &.active .header__search-results {
+    display: block;
+  }
 
   svg {
     width: 30px;
@@ -19,6 +33,55 @@
     transform: translateY(calc(-50% - 2px));
     top: 50%;
   }
+}
+.mobile-search {
+  display: none;
+  svg {
+    width: 30px;
+    top: 50%;
+  }
+}
+
+.mobile-search-visible {
+  display: flex !important;
+}
+
+.header__search-results {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  background-color: #F2F2F2;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.search-result {
+  padding: 10px 20px 10px 10px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #F8F8F8;
+  }
+}
+
+.search-result__img {
+  width: 50px;
+}
+
+.search-result__title {
+  flex-grow: 1;
+  padding: 0 15px;
+}
+
+.search-result__price {
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .header__icons {
@@ -60,6 +123,7 @@
 }
 
 .lang-select {
+  position: relative;
   display: flex;
   align-items: center;
   margin-right: 30px;
@@ -71,6 +135,26 @@
   svg {
     width: 16px;
   }
+}
+
+.lang-select__inner {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  padding: 5px;
+  cursor: pointer;
+  display: none;
+
+  span {
+    &:hover {
+      color: #5100D3
+    }
+  }
+}
+
+.lang-select:hover .lang-select__inner {
+  display: block;
 }
 
 .app-input {
@@ -86,10 +170,29 @@
   background-color: transparent;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .mobile-menu {
     display: block;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 15px;
+  }
+
+  .header__icons-item:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-menu {
+    margin-left: auto;;
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .header__search {
+    display: none;
+  }
+  .mobile-search {
+    display: flex;
   }
 }
