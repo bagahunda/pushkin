@@ -6,6 +6,10 @@
   p {
     margin: 0 0 50px;
   }
+
+  .btn {
+    display: inline-flex;
+  }
 }
 
 .visit__title {
@@ -14,7 +18,7 @@
   font-size: 40px;
   line-height: 1.2;
   text-transform: uppercase;
-  color: #111111;
+  color: #262626;
 
   span {
     color: #5100D3;

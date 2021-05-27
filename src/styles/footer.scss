@@ -55,6 +55,10 @@
   flex-wrap: wrap;
 }
 
+.footer__pay img:not(:last-child) {
+  margin-right: 10px;
+}
+
 .footer__info {
   margin-top: 60px;
   text-align: center;

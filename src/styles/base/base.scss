@@ -21,7 +21,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
-  color: #4F4F4F;
+  color: #262626;
   text-align: left;
   background-color: #fff;
 }
@@ -362,6 +362,17 @@ button {
   &:hover {
     background-color: #ffffff;
     color: #262626;
+  }
+
+  &--outline {
+    color: #111111;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+      color: #5100D3;
+      border-color: #5100D3;
+    }
   }
 }
 

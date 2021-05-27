@@ -9,12 +9,12 @@
 }
 
 .subscribe__title {
-  font-weight: 500;
-  font-size: 40px;
+  font-weight: 300;
+  font-size: 36px;
   line-height: 46px;
   text-align: center;
   text-transform: uppercase;
-  color: #333333;
+  color: #262626;
 }
 
 .subscribe__form {
@@ -111,7 +111,7 @@
   margin-top: 0.4em;
   width: 0.7em;
   height: 0.7em;
-  box-shadow: 0 0 0 0.1em #4F4F4F;
+  box-shadow: 0 0 0 0.1em #262626;
   background-color: transparent;
 
   &:after {
@@ -121,7 +121,7 @@
     top: 0;
     width: 5px;
     height: 10px;
-    border: solid #4F4F4F;
+    border: solid #262626;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);

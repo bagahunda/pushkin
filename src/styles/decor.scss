@@ -7,7 +7,7 @@
 
 .main-slide {
   position: relative;
-  text-align: right;
+  // text-align: right;
   display: flex;
 }
 
@@ -33,7 +33,11 @@
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
-    color: #333333;
+    color: #262626;
+
+    span {
+      color: #5100D3;
+    }
   }
 }
 

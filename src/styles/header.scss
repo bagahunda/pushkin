@@ -19,7 +19,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  z-index: 2;
+  z-index: 9999;
   transition: all 0.3s ease-in-out;
 
   &.active .header__search-results {
@@ -111,7 +111,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #4F4F4F;
+  color: #262626;
 
   &:not(:last-child) {
     margin-right: 30px;
@@ -129,7 +129,7 @@
   margin-right: 30px;
   font-size: 12px;
   font-weight: 300;
-  color: #4F4F4F;
+  color: #262626;
   cursor: pointer;
 
   svg {
@@ -165,8 +165,8 @@
   border: none;
   font-size: 16px;
   font-style: italic;
-  color: #4F4F4F;
-  border-bottom: 1px solid #4F4F4F;
+  color: #262626;
+  border-bottom: 1px solid #262626;
   background-color: transparent;
 }
 
@@ -185,6 +185,10 @@
 @media screen and (max-width: 992px) {
   .mobile-menu {
     margin-left: auto;;
+  }
+
+  .header__search-results {
+    top: 30px;
   }
 }
 
