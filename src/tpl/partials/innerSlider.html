@@ -1,0 +1,22 @@
+<div class="inner-slider">
+  <div class="container">
+    <div class="row">
+      <div class="subcat-slider splide">
+        <div class="splide__track">
+          <div class="splide__list">
+            {{#each images }}      
+              <a href="#" class="splide__slide inner-slider__slide">
+                <div class="inner-slider__slide-img">
+                  <img src="./dist/images/{{img}}.jpg" alt="">
+                </div>
+                <div class="inner-slider__slide-title">
+                  {{title}}
+                </div>
+              </a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

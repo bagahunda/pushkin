@@ -2,8 +2,13 @@
   position: fixed;
   width: 100%;
   background: white;
-  top: 0;
+  top: -149px;
   z-index: 999;
+  transition: all 0.3s ease-in-out;
+
+  &--pinned {
+    top: 0;
+  }
 }
 
 .header {

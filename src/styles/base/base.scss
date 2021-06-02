@@ -350,7 +350,7 @@ button {
   padding: 15px 30px;
   appearance: none;
   outline: none;
-  border: 1px solid #111111;
+  border: 1px solid currentColor;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -404,6 +404,10 @@ button {
       background-color: #5100D3;
     }
   }
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 @media screen and(max-width: 420px) {

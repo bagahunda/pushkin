@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__items {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: #828282;
+  font-size: 14px;
+}
+
+.pagination__item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #F2F2F2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-right: 20px; 
+  }
+
+  &--active {
+    color: #262626;
+  }
+}
