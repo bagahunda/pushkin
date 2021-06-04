@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const searchBtn = document.querySelector('.js-search');
    const search = document.querySelector('.header__search')
    const filters = document.querySelector('.filters__items');
+   const filtesLinks = document.querySelectorAll('.filters__item')
    const filtersButton = document.querySelector('.js-filters')
    const filtersCloseBtn = document.querySelector('.js-filters-close');
 
@@ -236,6 +237,18 @@ document.addEventListener('DOMContentLoaded', () => {
       filtersCloseBtn.addEventListener('click', function() {
          filters.classList.remove('filters__items--mobile');
          body.classList.remove('overflow');
+      })
+   }
+
+   if (filtesLinks) {
+      filtesLinks.forEach(link => {
+         link.addEventListener('click', function() {
+            const isFiltersMobile = window.innerWidth < 992;
+            if (isFiltersMobile) {
+               // const parent = link.parentElement;
+               link.classList.toggle('filters__item--opened');
+            }
+         })
       })
    }
    
