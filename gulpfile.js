@@ -43,7 +43,7 @@ var path = {
     distFile : SRC_DIR + 'styles/sprite'
   },
   build: {
-    html: "./",
+    html: "./dist",
 
   },
   src: {
@@ -152,7 +152,7 @@ function js(cb) {
 
 function watch(done) {
   browserSync.init({
-    server: "./"
+    server: "./dist"
   });
   gulp.watch([path.watch.html], html);
   gulp.watch(path.sass.src, css);
