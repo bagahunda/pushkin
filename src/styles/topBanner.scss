@@ -1,3 +1,7 @@
+.top-banner {
+  padding-bottom: 50px;
+}
+
 .top-banner__slide {
   padding: 0 15px;
   display: flex;
@@ -57,11 +61,5 @@
 
   .top-banner__text h2 {
     font-size: 30px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .top-banner {
-    padding-bottom: 50px;
   }
 }

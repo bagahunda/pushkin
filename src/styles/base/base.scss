@@ -410,6 +410,13 @@ button {
   overflow: hidden;
 }
 
+.secondary-title {
+  font-size: 36px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #262626;
+}
+
 @media screen and(max-width: 420px) {
   .cta .splide__pagination .splide__pagination__page {
     width: 50px;

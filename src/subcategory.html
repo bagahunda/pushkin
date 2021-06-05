@@ -1,0 +1,101 @@
+---
+layout: default
+title: Subcategory
+breadcrumbs:
+  -
+    url: '#'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Каталог'
+  -
+    url: '#'
+    title: 'Книги об искусстве'
+images:
+  -
+    img: 'subcat1'
+    title: 'каталоги'
+  -
+    img: 'subcat2'
+    title: 'путеводители'
+  -
+    img: 'subcat3'
+    title: 'об искусстве'
+  -
+    img: 'subcat4'
+    title: 'coffee table books'
+  -
+    img: 'subcat5'
+    title: 'для детей'
+---
+
+{{> breadcrumbs}}
+{{> subheader title='Книги об <span>искусстве</span>' lead=' Как научиться понимать искусство? Нужно долго смотреть картины и инсталляции искать и находить в них смысл, а не проходить мимо в недоумении? Наш магазин сделал подборку из восхитительных и интересных книг по искусству. В коллекции представлены подарочные издания и книги, для самых искушенных и тех кто только проявляет свой интерес к искусству.'}}
+{{> filters}}
+
+<div class="cat-items__qty">
+  <div class="container">
+    <div class="qty-selector">
+      Показать 12 товаров
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12"><path d="M.333 5.5h10.209L6.167 1.125 6.72.5l5.417 5.417-5.417 5.416-.553-.625 4.375-4.375H.333V5.5z" fill="#262626"/></svg>
+      <div class="qty-selector__items">
+        <a href="#" class="qty-selector__item">
+          Показать 24 товара
+        </a>
+        <a href="#" class="qty-selector__item">
+          Показать 32 товара
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="container">
+    <div class="row mb-lg-4">
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard}}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard }}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard}}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard }}
+      </div>
+    </div>
+    <div class="row mb-lg-4">
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard}}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard }}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard}}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard }}
+      </div>
+    </div>
+    <div class="row mb-lg-4">
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard}}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard }}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard}}
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mb-4 mb-lg-0">
+        {{> productCard }}
+      </div>
+    </div>
+  </div>
+</div>
+{{> pagination }}
+{{> recomendations }}
+{{> viewedProducts}}

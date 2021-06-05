@@ -1,0 +1,18 @@
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.breadcrumbs__item {
+  &:not(:last-child):after {
+    content: '/';
+    padding: 0 0.5em;
+  }
+
+  &:last-child {
+    pointer-events: none;
+  }
+}

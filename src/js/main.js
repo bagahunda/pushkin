@@ -75,35 +75,38 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 
    //CATEGORY PAGE SLIDER
-   const subcatBlock = document.querySelector('.subcat-slider');
+   const subcatBlock = document.querySelectorAll('.subcat-slider');
    if (subcatBlock) {
-      const subcatSlider = new Splide(subcatBlock, {
-         type: 'loop',
-         perPage: 4,
-         perMove: 1,
-         gap: 30,
-         speed: 800,
-         flickMaxPages: 1,
-         pagination: false,
-         classes: {
-            arrows: 'subcat-slider__arrows',
-            arrow: 'subcat-slider__arrow',
-            prev: 'subcat-slider__prev',
-            next: 'subcat-slider__next'
-         },
-         breakpoints: {
-            1200: {
-               perPage: 3
+      subcatBlock.forEach((block, index) => {
+         console.log('inner slider ->', block, index);
+         window[`innerSlider${index}`] = new Splide(block, {
+            type: 'loop',
+            perPage: 4,
+            perMove: 1,
+            gap: 30,
+            speed: 800,
+            flickMaxPages: 1,
+            pagination: false,
+            classes: {
+               arrows: 'subcat-slider__arrows',
+               arrow: 'subcat-slider__arrow',
+               prev: 'subcat-slider__prev',
+               next: 'subcat-slider__next'
             },
-            992: {
-               perPage: 2
-            },
-            576: {
-               perPage: 1
+            breakpoints: {
+               1200: {
+                  perPage: 3
+               },
+               992: {
+                  perPage: 2
+               },
+               576: {
+                  perPage: 1
+               }
             }
-         }
-      });
-      subcatSlider && subcatSlider.mount();
+         });
+         window[`innerSlider${index}`] && window[`innerSlider${index}`].mount();
+      })
    }
 
    // NAVIGATION
