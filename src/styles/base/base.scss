@@ -418,6 +418,9 @@ button {
 }
 
 @media screen and(max-width: 420px) {
+  .secondary-title {
+    font-size: 26px;
+  }
   .cta .splide__pagination .splide__pagination__page {
     width: 50px;
   }
