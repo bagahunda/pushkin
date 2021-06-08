@@ -1,0 +1,44 @@
+---
+layout: default
+title: productPage
+breadcrumbs:
+  -
+    url: '#'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Каталог'
+  -
+    url: '#'
+    title: 'Декор'
+  -
+    url: '#'
+    title: 'Статуэтка богини Бастет в образе кошки'
+images:
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+---
+
+{{> breadcrumbs }}
+
+<div class="product">
+  <div class="container">
+    <div class="product__top">
+      <div class="row">
+        <div class="product__slider col-12 col-lg-6">
+          {{> productSlider}}
+        </div>
+        <div class="product__info col-12 col-lg-6">
+          {{> productInfo }}
+        </div>
+      </div>
+    </div>
+    <div class="product__accordeon">
+      {{> productAccordeon}}  
+    </div>
+  </div>
+  {{> recomendations}}
+  {{> viewedProducts}}
+</div>

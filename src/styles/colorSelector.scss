@@ -1,0 +1,53 @@
+.color-selector {
+  position: relative;
+  text-transform: uppercase;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+.color-selector__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.color-selector__box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  background-clip: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgba(130, 130, 130, 0.5);
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+
+  &--green {
+    background-color: #219653;
+  }
+
+  &--blue {
+    background-color: #2F80ED;
+  }
+
+  &--red {
+    background-color: #EB5757;
+  }
+}
+
+.color-selector__input:checked + .color-selector__box {
+  border-color: #5100D3;
+  // background-color: #5100D3;
+  // color: #ffffff;
+}

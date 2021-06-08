@@ -1,9 +1,12 @@
 .breadcrumbs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 10px;
   font-weight: 300;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .breadcrumbs__item {

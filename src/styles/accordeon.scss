@@ -1,0 +1,53 @@
+.accordeon__item{
+  & + & {
+    margin-top: 25px;
+  }
+  &--active .accordeon__panel {
+    visibility: visible;
+  }
+
+  &--active .accordeon__trigger svg {
+    transform: rotate(270deg);
+  }
+}
+
+
+.accordeon__header {
+  margin: 0;
+}
+
+.accordeon__trigger {
+  padding: 0 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  appearance: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #262626;
+  background-color: #ffffff;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 500;
+  color: #262626;
+
+  svg {
+    transform: rotate(90deg);
+    width: 23px;
+    transition: rotate 0.3s ease-in-out;
+  }
+}
+
+.accordeon__panel {
+  padding: 33px 20px 0;
+  transition: height, visibility 0.3s ease-in-out;
+  overflow: hidden;
+  visibility: hidden;
+
+  p {
+    margin: 0;
+  }
+}

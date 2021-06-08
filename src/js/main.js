@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
    const subcatBlock = document.querySelectorAll('.subcat-slider');
    if (subcatBlock) {
       subcatBlock.forEach((block, index) => {
-         console.log('inner slider ->', block, index);
          window[`innerSlider${index}`] = new Splide(block, {
             type: 'loop',
             perPage: 4,
@@ -109,6 +108,198 @@ document.addEventListener('DOMContentLoaded', () => {
       })
    }
 
+   //Product slider
+   const product = document.querySelector('.product-slider__main');
+   if (product) {
+      const productSlider = new Splide(product, {
+         pagination: false,
+         classes: {
+            arrows: 'product-slider__arrows',
+            arrow: 'product-slider__arrow',
+            prev: 'product-slider__prev',
+            next: 'product-slider__next'
+         }
+      });
+
+      const productThumbSlider = new Splide('.product-slider-thumb', {
+         fixedWidth: 120,
+         gap: 10,
+         pagination: false,
+         arrows: false,
+         isNavigation: true,
+         classes: {
+            arrows: 'product-slider-thumb__arrows',
+            arrow: 'product-slider-thumb__arrow',
+            prev: 'product-slider-thumb__prev',
+            next: 'product-slider-thumb__next'
+         }
+      });
+      productThumbSlider.mount();
+      productSlider.sync(productThumbSlider).mount();
+   }
+
+   //STAR RATING
+
+   const Starify = function(selectorOrElement, userOptions) {
+      if (Array.isArray(selectorOrElement)) {
+         if (selectorOrElement.length) {
+            return selectorOrElement.map(item => new Starify(item, userOptions));
+         }
+
+         return false;
+      }
+
+      const core = {
+         init() {
+            const defaults = {
+               elementClass: 'star',
+               activeColor: '#5100D3',
+               baseColor: '#BDBDBD'
+            }
+
+            this.options = Object.assign(defaults, userOptions);
+
+            const isString = (typeof selectorOrElement === 'string');
+
+            this.container = isString ? document.querySelector(selectorOrElement) : selectorOrElement;
+
+            this.rating = this.container.dataset.rating;
+                        
+            if (!Number.isInteger(this.rating)) {
+               this.percent = `${Math.ceil((this.rating - Math.floor(this.rating)) * 100)}%`;
+            }
+
+            if (!this.rating) {
+               throw new Error('You must provide data-rating on stars container');
+            }
+            const { elementClass } = this.options;
+
+            this.elements = Array.from(this.container.childNodes).filter(el => el.classList && el.classList.contains(elementClass));
+
+            this.elements.forEach(el => {
+               const id = `_${Math.random().toString(36).substr(2, 9)}`;
+               const gr = el.querySelector('linearGradient');
+               const path = el.querySelector('path');
+               gr.id = `gradient${id}`;
+               path.setAttribute('fill', `url(#gradient${id})`)
+            })
+
+            this.target = this.rating < 5 ? this.elements[Math.floor(this.rating)] : this.elements[4];
+
+            this.elements.length = Math.floor(this.rating);
+
+            this.setRating();
+         },
+
+         setRating() {
+            this.elements.forEach(element => {
+               element.classList.add('star--filled')
+            })
+            const col1 = this.target.querySelector('.color1-start');
+            const col2 = this.target.querySelector('.color1-end');
+            const col3 = this.target.querySelector('.color2-start');
+            col1.setAttribute('stop-color', this.options.activeColor);
+            col2.setAttribute('stop-color', this.options.activeColor);
+            if (this.percent) {
+               col2.setAttribute('offset', this.percent)
+               col3.setAttribute('offset', this.percent)
+            }
+         }
+      }
+
+      core.init();
+   };
+
+   const starsContainer = document.querySelectorAll('.stars');
+
+   if (starsContainer) {
+      starsContainer.forEach((star, index) => {
+         window[`nubmerInput${index}`] = new Starify(star);
+         console.log("🚀 ~ file: main.js ~ line 210 ~ starsContainer.forEach ~ window[`nubmerInput${index}`]", window[`nubmerInput${index}`])
+      })
+      // const starsRating = new Starify(starsContainer);
+   }
+
+   // NUMBER INPUT
+
+   const NumberInput = function(selectorOrElement, userOptions) {
+      if (Array.isArray(selectorOrElement)) {
+         if (selectorOrElement.length) {
+            return selectorOrElement.map(item => new numberInput(item, userOptions));
+         }
+
+         return false;
+      }
+
+      const core = {
+         init() {
+            const defaults = {
+               max: 100,
+               min: 1,
+               step: 1
+            }
+
+            this.options = Object.assign(defaults, userOptions);
+
+            const isString = (typeof selectorOrElement === 'string');
+
+            this.container = isString ? document.querySelector(selectorOrElement) : selectorOrElement;
+
+            const buttons = Array.from(this.container.querySelectorAll('.number-input__button'));
+            
+            this.targetInput = this.container.querySelector('input');            
+            this.decButton = buttons[0];
+            this.incButton = buttons[1];
+
+            this.decButton.addEventListener('click', this.decrement.bind(this));
+            this.incButton.addEventListener('click', this.increment.bind(this));
+
+         },
+
+         decrement(target) {
+            const val = +this.targetInput.value;
+            if (val > this.options.min) {
+               this.targetInput.value = val - 1;
+            } else {
+               return false;
+            }
+         },
+   
+         increment(target) {
+            const val = +this.targetInput.value;
+            if (val < this.options.max) {
+               this.targetInput.value = val + 1;
+            } else {
+               return false
+            }
+         }
+      };
+
+
+      core.init();
+   };
+
+   const numberInputs = document.querySelectorAll('.number-input');
+   if (numberInputs) {
+      numberInputs.forEach((input, index) => {
+         window[`nubmerInput${index}`] = new NumberInput(input);
+      })
+   }
+
+   // ACCORDEON
+
+   const accordeonContainer = document.querySelector('.accordeon');
+
+   if (accordeonContainer) {
+      new Accordion(accordeonContainer, {
+         elementClass: 'accordeon__item',
+         triggerClass: 'accordeon__trigger',
+         panelClass: 'accordeon__panel',
+         activeClass: 'accordeon__item--active',
+         showMultiple: true
+      });
+   }
+
    // NAVIGATION
    const topBlock = document.querySelector('.top');
    const menuButton = document.querySelector('.js-menu');
@@ -122,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const filtesLinks = document.querySelectorAll('.filters__item')
    const filtersButton = document.querySelector('.js-filters')
    const filtersCloseBtn = document.querySelector('.js-filters-close');
+   const shareLinks = document.querySelectorAll('.share');
 
    const debounce = function (fn) { 
       var timeout;
@@ -251,6 +443,14 @@ document.addEventListener('DOMContentLoaded', () => {
                // const parent = link.parentElement;
                link.classList.toggle('filters__item--opened');
             }
+         })
+      })
+   }
+
+   if (shareLinks) {
+      shareLinks.forEach(link => {
+         link.addEventListener('click', function() {
+            link.classList.toggle('share--opened');
          })
       })
    }
