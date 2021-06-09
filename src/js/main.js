@@ -132,6 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
             arrow: 'product-slider-thumb__arrow',
             prev: 'product-slider-thumb__prev',
             next: 'product-slider-thumb__next'
+         },
+         breakpoints: {
+            550: {
+               fixedWidth: 65
+            }
          }
       });
       productThumbSlider.mount();
@@ -291,13 +296,14 @@ document.addEventListener('DOMContentLoaded', () => {
    const accordeonContainer = document.querySelector('.accordeon');
 
    if (accordeonContainer) {
-      new Accordion(accordeonContainer, {
+      const accordeon = new Accordion(accordeonContainer, {
          elementClass: 'accordeon__item',
          triggerClass: 'accordeon__trigger',
          panelClass: 'accordeon__panel',
          activeClass: 'accordeon__item--active',
          showMultiple: true
       });
+      accordeon.open(1)
    }
 
    // NAVIGATION
@@ -314,6 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const filtersButton = document.querySelector('.js-filters')
    const filtersCloseBtn = document.querySelector('.js-filters-close');
    const shareLinks = document.querySelectorAll('.share');
+   const productOptions = document.querySelector('.product__options');
 
    const debounce = function (fn) { 
       var timeout;
@@ -452,6 +459,14 @@ document.addEventListener('DOMContentLoaded', () => {
          link.addEventListener('click', function() {
             link.classList.toggle('share--opened');
          })
+      })
+   }
+
+   if (productOptions) {
+      const options = productOptions.querySelectorAll('.product__option-items');
+      options.forEach(option => {
+         const selectors = option.querySelectorAll('label');
+         option.style.width = `${(selectors.length * 50) + ((selectors.length - 1) * 10)}px`;
       })
    }
    

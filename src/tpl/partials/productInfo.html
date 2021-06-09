@@ -7,7 +7,9 @@
 </div>
 <div class="product__rating">
   {{> starRating rating=4.65 }}
-  Рейтинг 4,65 на базе <a href="#"> 125 отзывов</a>
+  <span>
+    Рейтинг 4,65 на базе <a href="#"> 125 отзывов</a>
+  </span>
 </div>
 <div class="product__price">
   12 240 ₽
@@ -16,21 +18,25 @@
     <span class="product__price-info">Для членов <a href="#">«Клуба друзей»</a></span>
   </div>
 </div>
-<div class="product__options">
-  <div class="product__option">
-    <span class="product__option-title">
-      Выберите размер
-    </span>
-    <div class="product__option-items">
-      {{> sizeSelector }}
-    </div>
-  </div>
+<div class="product__options">  
   <div class="product__option">
     <span class="product__option-title">
       Выберите цвет
     </span>
-    <div class="product__option-items">
-      {{> colorSelector }}
+    <div class="product__option-items-wrapper">
+      <div class="product__option-items">
+        {{> colorSelector }}
+      </div>
+    </div>
+  </div>
+  <div class="product__option">
+    <span class="product__option-title">
+      Выберите размер
+    </span>
+    <div class="product__option-items-wrapper">
+      <div class="product__option-items">
+        {{> sizeSelector }}
+      </div>
     </div>
   </div>
 </div>

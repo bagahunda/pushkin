@@ -19,6 +19,12 @@ images:
     img: 'product1'
   -
     img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
 ---
 
 {{> breadcrumbs }}
@@ -26,11 +32,14 @@ images:
 <div class="product">
   <div class="container">
     <div class="product__top">
+      <h1 class="product__title product__title--mobile">
+        Свитшот <span>ZEYTZ</span>. Коллекция «Пушкинский музей»
+      </h1>
       <div class="row">
-        <div class="product__slider col-12 col-lg-6">
+        <div class="product__slider col-12 col-xl-6">
           {{> productSlider}}
         </div>
-        <div class="product__info col-12 col-lg-6">
+        <div class="product__info col-12 col-xl-6">
           {{> productInfo }}
         </div>
       </div>

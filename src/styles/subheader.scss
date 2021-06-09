@@ -17,3 +17,9 @@
 .subheader__lead {
   margin: 15px 0 0;
 }
+
+@media screen and (max-width: 768px) {
+  .subheader {
+    margin-bottom: 30px;
+  }
+}
