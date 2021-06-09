@@ -2666,7 +2666,7 @@
                   </div>
                 </div></div>
               <div class="product__rating">
-                <div class="stars" data-rating="4.65">
+                <div class="stars js-show-stars" data-rating="4.65">
                   <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                     <linearGradient id="linear-gradient-1">
                       <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
@@ -2895,26 +2895,6 @@
                       <dd>по РФ</dd>
                     </dl>
                   </div>
-                  <!-- <div class="product-detail">
-                    <span>Тип:</span>
-                    <span class="product-details__separator"></span>
-                    <span>Картина по номерам</span>
-                  </div> -->
-                  <!-- <div class="product-detail">
-                    <span>Бренд:</span>
-                    <span class="product-details__separator"></span>
-                    <span>ZEYTZ. Коллекция «Пушкинский музей»</span>
-                  </div> -->
-                  <!-- <div class="product-detail">
-                    <span>Уровень сложности набора:</span>
-                    <span class="product-details__separator"></span>
-                    <span>Несложный</span>
-                  </div> -->
-                  <!-- <div class="product-detail">
-                    <span>Доставка:</span>
-                    <span class="product-details__separator"></span>
-                    <span>по РФ</span>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -2927,7 +2907,7 @@
               </h2>
               <div class="accordeon__panel">
                 <div class="product-reviews">
-                  <div class="stars" data-rating="4.65">
+                  <div class="stars js-show-stars" data-rating="4.65">
                     <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                       <linearGradient id="linear-gradient-1">
                         <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
@@ -2985,7 +2965,7 @@
                           Иванова Марина
                           <span>Проверенный покупатель</span>
                         </h3>
-                        <div class="stars" data-rating="5">
+                        <div class="stars js-show-stars" data-rating="5">
                           <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <linearGradient id="linear-gradient-1">
                               <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
@@ -3049,7 +3029,7 @@
                     </div>
                   </div>
                   <div class="product-reviews__action">
-                    <button class="btn btn--outline">Добавить отзыв</button>
+                    <button class="btn btn--outline js-review-modal">Добавить отзыв</button>
                   </div>
                 </div>
               </div>
@@ -3606,6 +3586,96 @@
               </div>
             </div>
           </div>  </div>
+      </div>  <div class="modal review-modal" data-close="true" tabindex="-1">
+        <div class="modal__dialog">
+          <div class="modal__content">
+            <div class="modal__header">
+              <h5 class="modal__title">Оставить отзыв:</h5>
+              <button type="button" class="modal__close" data-close="true" aria-label="Close">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><path d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z" fill="#fff"/></svg>
+              </button>
+            </div>
+            <div class="modal__body">
+              <div class="make-review">
+                <span>Оцените свой опыт использования:</span>
+                <div class="stars js-set-stars" data-rating="0">
+                  <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <linearGradient id="linear-gradient-1">
+                      <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
+                      <stop class="color1-end" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-start" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-end" offset="100%" stop-color="#BDBDBD"/>
+                    </linearGradient>
+                    <path d="M16 6.52l2.76 5.58.46 1 1 .15 6.16.89-4.38 4.3-.75.73.18 1 1.05 6.13-5.51-2.89L16 23l-.93.49-5.51 2.85 1-6.13.18-1-.74-.77-4.42-4.35 6.16-.89 1-.15.46-1L16 6.52zM16 2l-4.55 9.22-10.17 1.47 7.36 7.18L6.9 30l9.1-4.78L25.1 30l-1.74-10.13 7.36-7.17-10.17-1.48L16 2z" fill="url(#linear-gradient-1)"/>
+                  </svg>
+                  <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <linearGradient id="linear-gradient-2">
+                      <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
+                      <stop class="color1-end" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-start" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-end" offset="100%" stop-color="#BDBDBD"/>
+                    </linearGradient>
+                    <path d="M16 6.52l2.76 5.58.46 1 1 .15 6.16.89-4.38 4.3-.75.73.18 1 1.05 6.13-5.51-2.89L16 23l-.93.49-5.51 2.85 1-6.13.18-1-.74-.77-4.42-4.35 6.16-.89 1-.15.46-1L16 6.52zM16 2l-4.55 9.22-10.17 1.47 7.36 7.18L6.9 30l9.1-4.78L25.1 30l-1.74-10.13 7.36-7.17-10.17-1.48L16 2z" fill="url(#linear-gradient-2)"/>
+                  </svg>
+                  <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <linearGradient id="linear-gradient-3">
+                      <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
+                      <stop class="color1-end" offset="80%" stop-color="#BDBDBD"/>
+                      <stop class="color2-start" offset="80%" stop-color="#BDBDBD"/>
+                      <stop class="color2-end" offset="100%" stop-color="#BDBDBD"/>
+                    </linearGradient>
+                    <path d="M16 6.52l2.76 5.58.46 1 1 .15 6.16.89-4.38 4.3-.75.73.18 1 1.05 6.13-5.51-2.89L16 23l-.93.49-5.51 2.85 1-6.13.18-1-.74-.77-4.42-4.35 6.16-.89 1-.15.46-1L16 6.52zM16 2l-4.55 9.22-10.17 1.47 7.36 7.18L6.9 30l9.1-4.78L25.1 30l-1.74-10.13 7.36-7.17-10.17-1.48L16 2z" fill="url(#linear-gradient-3)"/>
+                  </svg>
+                  <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <linearGradient id="linear-gradient-4">
+                      <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
+                      <stop class="color1-end" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-start" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-end" offset="100%" stop-color="#BDBDBD"/>
+                    </linearGradient>
+                    <path d="M16 6.52l2.76 5.58.46 1 1 .15 6.16.89-4.38 4.3-.75.73.18 1 1.05 6.13-5.51-2.89L16 23l-.93.49-5.51 2.85 1-6.13.18-1-.74-.77-4.42-4.35 6.16-.89 1-.15.46-1L16 6.52zM16 2l-4.55 9.22-10.17 1.47 7.36 7.18L6.9 30l9.1-4.78L25.1 30l-1.74-10.13 7.36-7.17-10.17-1.48L16 2z" fill="url(#linear-gradient-4)"/>
+                  </svg>
+                  <svg class="star" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <linearGradient id="linear-gradient-5">
+                      <stop class="color1-start" offset="0%" stop-color="#BDBDBD"/>
+                      <stop class="color1-end" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-start" offset="60%" stop-color="#BDBDBD"/>
+                      <stop class="color2-end" offset="100%" stop-color="#BDBDBD"/>
+                    </linearGradient>
+                    <path d="M16 6.52l2.76 5.58.46 1 1 .15 6.16.89-4.38 4.3-.75.73.18 1 1.05 6.13-5.51-2.89L16 23l-.93.49-5.51 2.85 1-6.13.18-1-.74-.77-4.42-4.35 6.16-.89 1-.15.46-1L16 6.52zM16 2l-4.55 9.22-10.17 1.47 7.36 7.18L6.9 30l9.1-4.78L25.1 30l-1.74-10.13 7.36-7.17-10.17-1.48L16 2z" fill="url(#linear-gradient-5)"/>
+                  </svg>
+                </div>        </div>
+              <form class="review-form" id="reviewForm">
+                <div class="review-form__label">
+                  Как вас зовут
+                </div>
+                <div class="review-form__row review-form__row--double">
+                  <input type="text" name="firstName" id="firstName" placeholder="Ваше имя" class="input">
+                  <input type="text" name="lastName" id="lastName" placeholder="Ваша фамилия" class="input">
+                </div>
+                <div class="review-form__row">
+                  <textarea name="message" id="message" class="textarea" placeholder="Ваш отзыв*" required></textarea>
+                </div>
+                <div class="review-form__row">
+                  <label class="check">
+                    <input
+                      type="checkbox"
+                      class="check__input"
+                      id="agreement"
+                      name="agreement"
+                      value="yes"
+                    />
+                    <span class="check__box"></span>
+                    Я прочитал и согласен с правилами «Соглашение на обработку персональных данных»
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal__footer">
+              <button type="submit" form="reviewForm" class="btn btn--outline">Оставить отзыв</button>
+            </div>
+          </div>
+        </div>
       </div></div>
     <div class="subscribe">
       <div class="container">

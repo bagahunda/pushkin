@@ -408,6 +408,7 @@ button {
 
 .overflow {
   overflow: hidden;
+  padding-right: 0px;
 }
 
 .secondary-title {
@@ -415,6 +416,37 @@ button {
   font-weight: 300;
   text-transform: uppercase;
   color: #262626;
+}
+
+.input {
+  appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #828282;
+  height: 60px;
+  color: #4F4F4F;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+
+  &:focus {
+    border-color: #5100D3;
+  }
+}
+
+.textarea {
+  appearance: none;
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  border: 1px solid #828282;
+  color: #4F4F4F;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  resize: none;
+
+  &:focus {
+    border-color: #5100D3;
+  }
 }
 
 @media screen and(max-width: 420px) {

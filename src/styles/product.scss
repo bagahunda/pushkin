@@ -18,6 +18,10 @@
   color: #262626;
   text-transform: uppercase;
 
+  &--mobile {
+    display: none;
+  }
+
   span {
     color: #5100D3;
   }

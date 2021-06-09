@@ -73,26 +73,6 @@
             <dd>по РФ</dd>
           </dl>
         </div>
-        <!-- <div class="product-detail">
-          <span>Тип:</span>
-          <span class="product-details__separator"></span>
-          <span>Картина по номерам</span>
-        </div> -->
-        <!-- <div class="product-detail">
-          <span>Бренд:</span>
-          <span class="product-details__separator"></span>
-          <span>ZEYTZ. Коллекция «Пушкинский музей»</span>
-        </div> -->
-        <!-- <div class="product-detail">
-          <span>Уровень сложности набора:</span>
-          <span class="product-details__separator"></span>
-          <span>Несложный</span>
-        </div> -->
-        <!-- <div class="product-detail">
-          <span>Доставка:</span>
-          <span class="product-details__separator"></span>
-          <span>по РФ</span>
-        </div> -->
       </div>
     </div>
   </div>
@@ -105,7 +85,7 @@
     </h2>
     <div class="accordeon__panel">
       <div class="product-reviews">
-        {{> starRating rating=4.65 }}
+        {{> starRating rating=4.65 class='js-show-stars' }}
         Рейтинг 4,65 на базе 125 отзывов
         <a href="#" class="product-reviews__link">
           От купивших товар
@@ -118,7 +98,7 @@
                 Иванова Марина
                 <span>Проверенный покупатель</span>
               </h3>
-              {{> starRating rating=5 }}
+              {{> starRating rating=5 class='js-show-stars' }}
             </div>
             <div class="product-reviews__review-text">
               Замечательный товар, очень высокое качество упаковки и собственно самого товара, отлично переданы мельчайщие нюансы графики известного художника мариниста, буду рекомендовать покупать ваши картины по номерам своим друзьям и родственникам.
@@ -137,7 +117,7 @@
           </div>
         </div>
         <div class="product-reviews__action">
-          <button class="btn btn--outline">Добавить отзыв</button>
+          <button class="btn btn--outline js-review-modal">Добавить отзыв</button>
         </div>
       </div>
     </div>

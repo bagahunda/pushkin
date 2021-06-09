@@ -159,7 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const defaults = {
                elementClass: 'star',
                activeColor: '#5100D3',
-               baseColor: '#BDBDBD'
+               baseColor: '#BDBDBD',
+               readOnly: true
             }
 
             this.options = Object.assign(defaults, userOptions);
@@ -194,6 +195,20 @@ document.addEventListener('DOMContentLoaded', () => {
             this.elements.length = Math.floor(this.rating);
 
             this.setRating();
+
+            if (!this.options.readOnly) {
+               const stars = Array.from(this.container.childNodes).filter(el => el.classList && el.classList.contains(elementClass))
+               stars.forEach((element, index) => {
+                  element.addEventListener('click', function() {
+                     for (let i = 0; i <= index; i += 1) {
+                        stars[i].classList.add('star--filled');
+                     }
+                     for (let i = index + 1; i < stars.length; i += 1) {
+                        stars[i].classList.remove('star--filled');
+                     }
+                  })
+               })
+            }
          },
 
          setRating() {
@@ -215,14 +230,20 @@ document.addEventListener('DOMContentLoaded', () => {
       core.init();
    };
 
-   const starsContainer = document.querySelectorAll('.stars');
+   const starsContainer = document.querySelectorAll('.js-show-stars');
 
    if (starsContainer) {
       starsContainer.forEach((star, index) => {
-         window[`nubmerInput${index}`] = new Starify(star);
-         console.log("🚀 ~ file: main.js ~ line 210 ~ starsContainer.forEach ~ window[`nubmerInput${index}`]", window[`nubmerInput${index}`])
+         window[`stars${index}`] = new Starify(star);
       })
       // const starsRating = new Starify(starsContainer);
+   }
+
+   const reviewStarContainer = document.querySelectorAll('.js-set-stars');
+   if (reviewStarContainer) {
+      reviewStarContainer.forEach((el, index) => {
+         window[`starsRate${index}`] = new Starify(el, { readOnly: false });
+      })
    }
 
    // NUMBER INPUT
@@ -304,6 +325,81 @@ document.addEventListener('DOMContentLoaded', () => {
          showMultiple: true
       });
       accordeon.open(1)
+   }
+
+   // MODAL
+
+   const Modal = function(selectorOrElement, userOptions) {
+      if (Array.isArray(selectorOrElement)) {
+         if (selectorOrElement.length) {
+            return selectorOrElement.map(item => new Modal(item, userOptions));
+         }
+
+         return false;
+      }
+
+      const defaults = {}
+
+      this.options = Object.assign(defaults, userOptions);
+
+      const isString = (typeof selectorOrElement === 'string');
+
+      let isBusy = false;
+
+      const container = isString ? document.querySelector(selectorOrElement) : selectorOrElement;
+
+      const body = document.querySelector('body');
+
+      const listener = function(event) {
+         if (event.target.dataset.close) {
+            close();
+         }
+      };
+
+      const escListener = function(event) {
+         if (event.key === 'Escape') {
+            close();
+         }
+      }
+
+      container.addEventListener('click', listener);
+
+      function open() {
+         if (isBusy) return;
+         isBusy = true;
+         document.addEventListener('keydown', escListener)
+         container.style.display = 'block';
+         setTimeout(() => {
+            body.classList.add('overflow');
+            isBusy = false;
+         }, 100);
+      }
+      function close() {
+         if (isBusy) return;
+         isBusy = true;
+         document.removeEventListener('keydown', escListener)
+         body.classList.remove('overflow');
+         setTimeout(() => {
+            container.style.display = 'none';
+            isBusy = false;
+         }, 300);
+      }
+      function destroy() {
+         container.removeEventListener('click', listener);
+      }
+
+      return {
+         open,
+         close,
+         destroy
+      }
+   }
+
+   const reviewModalBlock = document.querySelector('.review-modal');
+   if (reviewModalBlock) {
+      const reviewModal = new Modal(reviewModalBlock);
+      const reviewModalBtn = document.querySelector('.js-review-modal');
+      reviewModalBtn.addEventListener('click', reviewModal.open);
    }
 
    // NAVIGATION
