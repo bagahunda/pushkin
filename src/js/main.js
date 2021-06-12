@@ -417,6 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const filtersCloseBtn = document.querySelector('.js-filters-close');
    const shareLinks = document.querySelectorAll('.share');
    const productOptions = document.querySelector('.product__options');
+   const cartRemoveButtons = document.querySelectorAll('.js-cart-remove');
 
    const debounce = function (fn) { 
       var timeout;
@@ -563,6 +564,18 @@ document.addEventListener('DOMContentLoaded', () => {
       options.forEach(option => {
          const selectors = option.querySelectorAll('label');
          option.style.width = `${(selectors.length * 50) + ((selectors.length - 1) * 10)}px`;
+      })
+   }
+
+   if (cartRemoveButtons) {
+      cartRemoveButtons.forEach(button => {
+         button.addEventListener('click', function(e) {
+            const target = e.target.closest('.cart__item');
+            target.classList.add('cart__item--removed');
+            setTimeout(() => {
+               target.remove();
+            }, 300);
+         })
       })
    }
    

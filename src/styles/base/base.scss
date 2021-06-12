@@ -374,6 +374,19 @@ button {
       border-color: #5100D3;
     }
   }
+
+  &--ghost {
+    padding: 8px 10px;
+    background-color: transparent;
+    border: none;
+    color: #262626;
+
+    &:hover {
+      background-color: transparent;
+      border: none;
+      color: #5100D3;
+    }
+  }
 }
 
 .text-center {
@@ -409,6 +422,14 @@ button {
 .overflow {
   overflow: hidden;
   padding-right: 0px;
+}
+
+.page-title {
+  font-size: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin: 10px 0 50px;
+  text-align: center;
 }
 
 .secondary-title {
