@@ -459,7 +459,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function getTemplate() {
-       console.log('getTemplate called');
       return `
           <div class="select__value" data-type="value">${data.placeholder}</div>
           <div class="select__dropdown">
@@ -477,7 +476,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function render() {
-      console.log("renderrrrr ->", container);
       container.innerHTML = getTemplate();
     }
 

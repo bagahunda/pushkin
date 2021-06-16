@@ -152,7 +152,7 @@ function js(cb) {
 
 function watch(done) {
   browserSync.init({
-    server: "./dist"
+    server: "./"
   });
   gulp.watch([path.watch.html], html);
   gulp.watch(path.sass.src, css);

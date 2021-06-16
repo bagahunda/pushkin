@@ -2,7 +2,7 @@
   {{#each items }}
     <div class="cart__item">
         <div class="cart__item-img">
-          <img src="./images/{{img}}.jpg" alt="">
+          <img src="./dist/images/{{img}}.jpg" alt="">
         </div>
         <div class="cart__item-main">
           <div class="cart__item-top">
@@ -11,11 +11,11 @@
                 {{ title }}
               </div>
             </div>
-            
+            {{#ifequal type 'cart'}}
               <div class="cart__item-qty">
                 {{> numberInput }}
               </div>
-            {{type}}
+            {{/ifequal}}
             <div class="cart__item-price">
               12 240 ₽
             </div>
