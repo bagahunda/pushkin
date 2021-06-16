@@ -6,17 +6,26 @@
   }
 }
 
-.review-form {
+.form {
   margin-top: 20px;
   color: #4F4F4F;
 }
 
-.review-form__label {
-  margin-bottom: 6px;
+.form__label {
+  margin-bottom: 30px;
   font-weight: 500;
+
+  &--with-option {
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+      width: 20px;
+    }
+  }
 }
 
-.review-form__row {
+.form__row {
   display: flex;
 
   & + & {
@@ -26,8 +35,16 @@
   &--double {
     justify-content: space-between;
 
-    .input {
+    .float-input, .select {
       width: calc((100% - 30px) / 2);
+    }
+  }
+
+  &--multi {
+    gap: 30px;
+
+    & > * {
+      flex-grow: 1;
     }
   }
 }
@@ -42,15 +59,27 @@
     }
   }
 
-  .review-form__row--double {
+  .form__row--double {
     flex-direction: column;
 
-    .input {
+    .input, .float-input, .select {
       width: 100%;
 
       &:not(:last-child) {
         margin-bottom: 20px;
       }
     }
+  }
+
+  .form__row--multi {
+    flex-direction: column;
+    gap: 20px;
+    & > * {
+      width: 100%;
+    }
+  }
+
+  .checkout .radio {
+    margin-bottom: 10px;
   }
 }

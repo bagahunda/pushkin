@@ -430,6 +430,10 @@ button {
   text-transform: uppercase;
   margin: 10px 0 50px;
   text-align: center;
+
+  span {
+    color: #5100D3;
+  }
 }
 
 .secondary-title {
@@ -468,6 +472,9 @@ button {
   &:focus {
     border-color: #5100D3;
   }
+}
+.form__block + .form__block {
+  margin-top: 80px;
 }
 
 @media screen and(max-width: 420px) {

@@ -1,0 +1,311 @@
+---
+layout: default
+title: Cart
+breadcrumbs:
+  -
+    url: '/'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Корзина'
+items:
+  -
+    title: 'Статуэтка Шеду. Ассирия. Дворец царя Саргона II в Дур-Шаррукине конец VIII в. до н. э.'
+    img: 'leaders1'
+  - 
+    title: 'Статуэтка Шеду. Ассирия. Дворец царя Саргона II в Дур-Шаррукине конец VIII в. до н. э.'
+    img: 'leaders2'
+  - 
+    title: 'Статуэтка Шеду. Ассирия. Дворец царя Саргона II в Дур-Шаррукине конец VIII в. до н. э.'
+    img: 'leaders3'
+---
+
+{{> breadcrumbs }}
+
+<div class="checkout">
+  <div class="container">
+    <h1 class="page-title">
+      офромление
+      <span>заказа</span>
+    </h1>
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        {{> cartItems type="checkout" }}
+        <div class="checkout__promo">
+          <h2>У вас есть промокод?</h2>
+          <input type="text" class="input">
+          <button class="btn btn--outline">Промокод</button>
+        </div>
+        <div class="checkout__form checkout__form--ordinal">
+          <h2 class="secondary-title">Оформление заказа</h2>
+          <p>Пожалуйста, <a href="#">авторизуйтесь</a>, если Вы уже оформляли заказы в нашем магазине и хотите заполнить все поля автоматически.</p>
+          <form class="form" id="checkoutForm">
+              <div class="form__block">
+                <div class="form__label form__label--with-option">
+                  Ваши данные
+                  <div class="org-selector">
+                    Физическое лицо
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3.333 10h10.208L9.166 5.625 9.72 5l5.416 5.417-5.416 5.416-.554-.625 4.375-4.375H3.333V10z" fill="#262626"/></svg>
+                    <div class="org-selector--inner">
+                      <span class="js-org" data-value="ordinal">Физическое лицо</span>
+                      <span class="js-org" data-value="org">Юридическое лицо</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ordinal-customer">
+                  <div class="form__row form__row--double">
+                    {{> floatInput type="text" id="checkoutName" label="Ваше имя"}}
+                    {{> floatInput type="text" id="checkoutSurname" label="Ваша фамилия"}}
+                  </div>
+                  <div class="form__row form__row--double">
+                    {{> floatInput type="tel" id="checkoutTel" label="Ваш телефон"}}
+                    {{> floatInput type="email" id="checkoutMail" label="Ваша почта"}}
+                  </div>
+                </div>
+                <div class="organization-customer">
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgName" label="Название организации"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="tel" id="orgTel" label="Телефон"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="email" id="orgEmail" label="Электронная почта"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgAddress" label="Юридический адрес"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgINN" label="ИНН"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgKPP" label="КПП"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgBank" label="Банк"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgAccount" label="Расчётный счёт"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgCor" label="Корреспондентский счёт"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgContact" label="Контактное лицо"}}
+                  </div>
+                </div>
+              </div>
+              <div class="form__block">
+                <div class="form__label">
+                  Доставка
+                </div>
+                <div class="ordinal-customer">
+                  <div class="form__row form__row--double">
+                    <div class="select" id="countrySelect" tabindex="0">
+                      <select name="country" id="country" data-placeholder="Страна">
+                        <option value="russia">Russia</option>
+                        <option value="notrussia">Not Russia</option>
+                      </select>
+                    </div>
+                    <div class="select" id="citySelect" tabindex="0">
+                      <select name="city" id="city" data-placeholder="Город">
+                        <option value="russia">Moscow</option>
+                        <option value="notrussia">Not Moscow</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--multi">
+                    <div>
+                      <div>
+                        <label class="radio">
+                          <input
+                            type="radio"
+                            class="radio__input"
+                            id="curier"
+                            name="deliveryOption"
+                            value="curier"
+                          />
+                          <span class="radio__box"></span>
+                          Доставка курьером по Москве и МО
+                        </label>
+                      </div>
+                      <div>
+                        <label class="radio">
+                          <input
+                            type="radio"
+                            class="radio__input"
+                            id="self"
+                            name="deliveryOption"
+                            value="self"
+                          />
+                          <span class="radio__box"></span>
+                          Самовывоз
+                        </label>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <label class="radio">
+                          <input
+                            type="radio"
+                            class="radio__input"
+                            id="office"
+                            name="deliveryOption"
+                            value="office"
+                          />
+                          <span class="radio__box"></span>
+                          Доставка в пункт самовывоза по РФ
+                        </label>
+                      </div>
+                      <div>
+                        <label class="radio">
+                          <input
+                            type="radio"
+                            class="radio__input"
+                            id="officeSelf"
+                            name="deliveryOption"
+                            value="officeSelf"
+                          />
+                          <span class="radio__box"></span>
+                          Самовывоз
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__row">
+                    {{> floatInput type="tel" id="checkoutStreet" label="Улица"}}
+                  </div>
+                  <div class="form__row form__row--multi">
+                    {{> floatInput type="tel" id="checkoutHouse" label="Дом"}}
+                    {{> floatInput type="tel" id="checkoutBlock" label="Корпус/Строение"}}
+                    {{> floatInput type="tel" id="checkoutFlat" label="Этаж"}}
+                    {{> floatInput type="tel" id="checkoutApp" label="Квартира"}}
+                  </div>
+                  <div class="form__row">
+                    {{> floatTextarea id="checkoutComment" label="Комментарии к заказу"}}
+                  </div>
+                </div>
+                <div class="organization-customer">
+                  <div class="form__row">
+                    {{> floatInput type="text" id="orgDelivery" label="Адрес доставки"}}
+                  </div>
+                </div>
+              </div>
+            <div class="form__block form__block--payment">
+              <div class="form__label">Оплата заказа</div>
+              <div class="checkout__payment">
+                <div class="checkout__payment-buttons">
+                  <div href="#" class="checkout__payment-button">
+                    <input type="radio" name="paymentMethod" id="paypal" value="paypal">
+                    <label for="paypal">
+                      <div class="checkout__payment-img">
+                        <img src="./images/payment-button-paypal.svg" alt="">
+                      </div>
+                      <span>Оплата PayPal</span>
+                    </label>
+                  </div>
+                  <div href="#" class="checkout__payment-button">
+                    <input type="radio" name="paymentMethod" id="google" value="google">
+                    <label for="google">
+                      <div class="checkout__payment-img"><img src="./images/payment-button-google.svg" alt=""></div>
+                      <span>Оплата Google Pay</span>
+                    </label>
+                  </div>
+                  <div href="#" class="checkout__payment-button">
+                    <input type="radio" name="paymentMethod" id="card" value="card">
+                    <label for="card">
+                      <div class="checkout__payment-img"><img src="./images/payment-button-card.svg" alt=""></div>
+                      <span>Оплата картой</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="checkout__payment-buttons">
+                  <div href="#" class="checkout__payment-button">
+                    <input type="radio" name="paymentMethod" id="cash" value="cash">
+                    <label for="cash">
+                      <div class="checkout__payment-img">
+                        <img src="./images/payment-button-cash.svg" alt="">
+                      </div>
+                      <span>Оплата наличными</span>
+                    </label>
+                  </div>
+                  <div href="#" class="checkout__payment-button">
+                    <input type="radio" name="paymentMethod" id="invoice" value="invoice">
+                    <label for="invoice">
+                      <div class="checkout__payment-img"><img src="./images/payment-button-invoice.svg" alt=""></div>
+                      <span>Оплата по безналу</span>
+                    </label>
+                  </div>
+                  <div href="#" class="checkout__payment-button">
+                    <input type="radio" name="paymentMethod" id="apple" value="apple">
+                    <label for="apple">
+                      <div class="checkout__payment-img"><img src="./images/payment-button-apple.svg" alt=""></div>
+                      <span>Оплата ApplePay</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__block">
+              <button class="btn btn--outline">Оформить заказ</button>
+              <label class="check">
+                <input
+                  type="checkbox"
+                  class="check__input"
+                  id="agreement"
+                  name="agreement"
+                  value="yes"
+                />
+                <span class="check__box"></span>
+                Я прочитал и согласен с правилами «Соглашение на обработку персональных данных»
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="checkout__summary">
+          <h2 class="secondary-title">Ваш заказ</h2>
+          <div class="checkout__info">
+            <dl>
+              <dt>Товары:</dt>
+              <dd>15 000 ₽</dd>
+            </dl>
+            <dl>
+              <dt>Скидка:</dt>
+              <dd>5 000 ₽</dd>
+            </dl>
+            <dl>
+              <dt>Итого за товары:</dt>
+              <dd>10 000 ₽</dd>
+            </dl>
+            <dl>
+              <dt>Доставка:</dt>
+              <dd>3 000 ₽</dd>
+            </dl>
+            <p>До бесплатной доставки нужно заказать ещё на 10 000 ₽. Точная цена будет рассчитана после указания адреса</p>
+          </div>
+          <div class="checkout__actions">
+            <button type="submit" class="btn btn--outline">Оформить заказ</button>
+            <div class="checkout__agree">
+              <label class="check">
+                <input
+                  type="checkbox"
+                  class="check__input"
+                  id="agreement"
+                  name="agreement"
+                  value="yes"
+                />
+                <span class="check__box"></span>
+                <span class="check__text">
+                  Я прочитал и согласен с правилами «Соглашение на обработку персональных данных»
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

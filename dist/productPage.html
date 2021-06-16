@@ -3646,18 +3646,27 @@
                     <path d="M16 6.52l2.76 5.58.46 1 1 .15 6.16.89-4.38 4.3-.75.73.18 1 1.05 6.13-5.51-2.89L16 23l-.93.49-5.51 2.85 1-6.13.18-1-.74-.77-4.42-4.35 6.16-.89 1-.15.46-1L16 6.52zM16 2l-4.55 9.22-10.17 1.47 7.36 7.18L6.9 30l9.1-4.78L25.1 30l-1.74-10.13 7.36-7.17-10.17-1.48L16 2z" fill="url(#linear-gradient-5)"/>
                   </svg>
                 </div>        </div>
-              <form class="review-form" id="reviewForm">
-                <div class="review-form__label">
+              <form class="form" id="reviewForm">
+                <div class="form__label">
                   Как вас зовут
                 </div>
-                <div class="review-form__row review-form__row--double">
-                  <input type="text" name="name" id="name" placeholder="Ваше имя" class="input">
-                  <input type="email" name="email" id="reviewEmail" placeholder="Электронная почта" class="input">
+                <div class="form__row form__row--double">
+                  <div class="float-input">
+                    <label for="name">Ваше имя</label>
+                    <input id="name" type="tel">
+                  </div>
+                  <div class="float-input">
+                    <label for="reviewEmail">Электронная почта</label>
+                    <input id="reviewEmail" type="email">
+                  </div>
                 </div>
-                <div class="review-form__row">
-                  <textarea name="message" id="message" class="textarea" placeholder="Ваш отзыв*" required></textarea>
+                <div class="form__row">
+                  <div class="float-textarea">
+                    <label for="message">Ваш отзыв*</label>
+                    <textarea id="message" type=""></textarea>
+                  </div>
                 </div>
-                <div class="review-form__row">
+                <div class="form__row">
                   <label class="check">
                     <input
                       type="checkbox"

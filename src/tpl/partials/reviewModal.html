@@ -12,18 +12,18 @@
           <span>Оцените свой опыт использования:</span>
           {{> starRating rating=0 class='js-set-stars' }}
         </div>
-        <form class="review-form" id="reviewForm">
-          <div class="review-form__label">
+        <form class="form" id="reviewForm">
+          <div class="form__label">
             Как вас зовут
           </div>
-          <div class="review-form__row review-form__row--double">
-            <input type="text" name="name" id="name" placeholder="Ваше имя" class="input">
-            <input type="email" name="email" id="reviewEmail" placeholder="Электронная почта" class="input">
+          <div class="form__row form__row--double">
+            {{> floatInput type="tel" id="name" label="Ваше имя"}}
+            {{> floatInput type="email" id="reviewEmail" label="Электронная почта"}}
           </div>
-          <div class="review-form__row">
-            <textarea name="message" id="message" class="textarea" placeholder="Ваш отзыв*" required></textarea>
+          <div class="form__row">
+            {{> floatTextarea id="message" label="Ваш отзыв*"}}
           </div>
-          <div class="review-form__row">
+          <div class="form__row">
             <label class="check">
               <input
                 type="checkbox"
