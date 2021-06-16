@@ -2701,14 +2701,13 @@
                   <div class="form__block">
                     <div class="form__label form__label--with-option">
                       Ваши данные
-                      <div class="org-selector">
-                        Физическое лицо
-                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3.333 10h10.208L9.166 5.625 9.72 5l5.416 5.417-5.416 5.416-.554-.625 4.375-4.375H3.333V10z" fill="#262626"/></svg>
-                        <div class="org-selector--inner">
-                          <span class="js-org" data-value="ordinal">Физическое лицо</span>
-                          <span class="js-org" data-value="org">Юридическое лицо</span>
-                        </div>
-                      </div>
+                      <div class="form-switch">
+                        <div class="switch">
+                          <input class="switch__input" type="radio" id="radio-one" name="switch-one" value="Физлицо" checked/>
+                          <label class="switch__label" for="radio-one">Физлицо</label>
+                          <input class="switch__input" type="radio" id="radio-two" name="switch-one" value="Юрлицо" />
+                          <label class="switch__label" for="radio-two">Юрлицо</label>
+                        </div>                  </div>
                     </div>
                     <div class="ordinal-customer">
                       <div class="form__row form__row--double">
@@ -2904,10 +2903,82 @@
                       </div>
                     </div>
                     <div class="organization-customer">
+                      <div class="form__row form__row--double">
+                        <div class="select" id="orgCountrySelect" tabindex="0">
+                          <select name="country" id="orgCountry" data-placeholder="Страна">
+                            <option value="russia">Russia</option>
+                            <option value="notrussia">Not Russia</option>
+                          </select>
+                        </div>
+                        <div class="select" id="orgCitySelect" tabindex="0">
+                          <select name="city" id="orgCity" data-placeholder="Город">
+                            <option value="russia">Moscow</option>
+                            <option value="notrussia">Not Moscow</option>
+                          </select>
+                        </div>
+                      </div>
                       <div class="form__row">
                         <div class="float-input">
                           <label for="orgDelivery">Адрес доставки</label>
                           <input id="orgDelivery" type="text">
+                        </div>
+                      </div>
+                      <div class="form__row form__row--multi">
+                        <div>
+                          <div>
+                            <label class="radio">
+                              <input
+                                type="radio"
+                                class="radio__input"
+                                id="orgCurier"
+                                name="deliveryOption"
+                                value="curier"
+                              />
+                              <span class="radio__box"></span>
+                              Доставка курьером по Москве и МО
+                            </label>
+                          </div>
+                          <div>
+                            <label class="radio">
+                              <input
+                                type="radio"
+                                class="radio__input"
+                                id="orgSelf"
+                                name="deliveryOption"
+                                value="self"
+                              />
+                              <span class="radio__box"></span>
+                              Самовывоз
+                            </label>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <label class="radio">
+                              <input
+                                type="radio"
+                                class="radio__input"
+                                id="orgOffice"
+                                name="deliveryOption"
+                                value="office"
+                              />
+                              <span class="radio__box"></span>
+                              Доставка в пункт самовывоза по РФ
+                            </label>
+                          </div>
+                          <div>
+                            <label class="radio">
+                              <input
+                                type="radio"
+                                class="radio__input"
+                                id="orgOfficeSelf"
+                                name="deliveryOption"
+                                value="officeSelf"
+                              />
+                              <span class="radio__box"></span>
+                              Самовывоз
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -1,0 +1,31 @@
+.switch {
+  display: flex;
+  overflow: hidden;
+}
+
+.switch__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  &:checked + .switch__label {
+    background-color: #5100D3;
+    border-color: #5100D3;
+    color: #ffffff;
+  }
+}
+
+.switch__label {
+  background-color: #f8f8f8;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 14px;
+  font-weight: 400;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}

@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartRemoveButtons = document.querySelectorAll(".js-cart-remove");
   const checkoutSummary = document.querySelector('.checkout__summary');
   const summaryPosition = checkoutSummary ? checkoutSummary.getBoundingClientRect().top - document.body.getBoundingClientRect().top : null;
-  const orgSelector = document.querySelector('.org-selector');
+  const formSwitchBlock = document.querySelector('.checkout .switch');
 
   const debounce = function (fn) {
     let timeout;
@@ -826,22 +826,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
-  if (orgSelector) {
-     const orgOptions = orgSelector.querySelectorAll('span');
-     orgOptions.forEach(item => {
-        const { value } = item.dataset;
-        const target = document.querySelector('.checkout__form');
-        const parent = item.parentElement.parentElement;
-        item.addEventListener('click', function() {
-           if (value === 'ordinal') {
-            target.classList.remove('checkout__form--org');
-            target.classList.add('checkout__form--ordinal');
-            parent.innerText = 'Физическое лицо';
-           } else if (value === 'org') {
-            parent.innerText = 'Юридическое лицо';
-            target.classList.remove('checkout__form--ordinal');
-            target.classList.add('checkout__form--org');
+  if (formSwitchBlock) {
+     const switchInput = formSwitchBlock.querySelectorAll('input');
+     const form = document.querySelector('.checkout__form');
+     switchInput.forEach(function(input) {
+        input.addEventListener('change', function(e) {
+           const org = e.target.value;
+           if (org === 'Физлицо') {
+              form.classList.remove('checkout__form--org');
+              form.classList.add('checkout__form--ordinal');
+              const countrySelector = document.querySelector("#countrySelect");
+               const citySelector = document.querySelector("#citySelect");
+
+               if (countrySelector) {
+                  const countrySelect = new Select(countrySelector, {
+                     onSelect(e) {
+                        console.log("country selected ->", e.trim());
+                     }
+                  })
+               }
+
+               if (citySelector) {
+                  const citySelect = new Select(citySelector, {
+                     onSelect(e) {
+                        console.log('city seected ->', e.trim());
+                     }
+                  })
+               }
            }
+           if (org === 'Юрлицо') {
+            form.classList.remove('checkout__form--ordinal');
+            form.classList.add('checkout__form--org');
+            const countrySelector = document.querySelector("#orgCountrySelect");
+            const citySelector = document.querySelector("#orgCitySelect");
+
+            if (countrySelector) {
+               const countrySelect = new Select(countrySelector, {
+                  onSelect(e) {
+                     console.log("country selected ->", e.trim());
+                  }
+               })
+            }
+
+            if (citySelector) {
+               const citySelect = new Select(citySelector, {
+                  onSelect(e) {
+                     console.log('city seected ->', e.trim());
+                  }
+               })
+            }
+         }
         })
      })
   }
