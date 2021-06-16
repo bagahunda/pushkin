@@ -43,7 +43,7 @@ var path = {
     distFile : SRC_DIR + 'styles/sprite'
   },
   build: {
-    html: "./dist",
+    html: "./",
 
   },
   src: {
