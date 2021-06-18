@@ -79,6 +79,10 @@
     }
   }
 
+  .form__row--no-mobile-gap {
+    gap: 0;
+  }
+
   .checkout .radio {
     margin-bottom: 10px;
   }

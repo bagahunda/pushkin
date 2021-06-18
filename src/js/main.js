@@ -655,6 +655,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartRemoveButtons = document.querySelectorAll(".js-cart-remove");
   const checkoutSummary = document.querySelector('.checkout__summary');
   const summaryPosition = checkoutSummary ? checkoutSummary.getBoundingClientRect().top - document.body.getBoundingClientRect().top : null;
+  const summaryHeight =  checkoutSummary ? checkoutSummary.offsetHeight : null;
   const formSwitchBlock = document.querySelector('.checkout .switch');
 
   const debounce = function (fn) {
@@ -715,10 +716,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("scroll", function () {
       const top = window.scrollY || window.pageYOffset;
       if (summaryPosition) {
-         if (top > summaryPosition) {
+         const subscribeBlock = document.querySelector('.subscribe');
+         const subscribePosition = subscribeBlock.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+         const limit = subscribeBlock.getBoundingClientRect().top - summaryHeight;
+         if (top > summaryPosition && (top + summaryHeight) < subscribePosition) {
             checkoutSummary.style.width = `${checkoutSummary.clientWidth}px`;
             checkoutSummary.style.top = '0';
             checkoutSummary.style.position = 'fixed';
+         } else if(limit <= 0) {
+            checkoutSummary.style.top = `${limit}px`;
          } else {
             checkoutSummary.style.position = 'static';
          }
