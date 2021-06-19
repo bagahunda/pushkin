@@ -40,6 +40,17 @@
     }
   }
 
+  &--triple {
+
+    .float-input, .select {
+      width: calc((100% - 60px) / 3);
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
   &--multi {
     gap: 30px;
 

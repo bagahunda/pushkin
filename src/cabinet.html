@@ -1,0 +1,60 @@
+---
+layout: cabinet
+title: Cabinet
+breadcrumbs:
+  -
+    url: '/'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Личный кабинет'
+---
+
+{{> breadcrumbs }}
+
+{{> subheader title='Личный <span>кабинет</span>' lead=' В личном кабинете вы можете проверить ход выполнения ваших заказов, просмотреть или изменить личные данные или подписаться на рассылки магазина.'}}
+
+<div class="cabinet">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-3">
+        <div class="cabinet__nav">
+          <a href="#" class="cabinet__link cabinet__link--active">Личные данные</a>
+          <a href="#" class="cabinet__link">Заказы</a>
+          <a href="#" class="cabinet__link">Список желаний</a>
+          <a href="#" class="cabinet__link">Подписки</a>
+          <a href="#" class="cabinet__link">Выход</a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <form class="cabinet__form">
+          <div class="form__row form__row--triple">
+            {{> floatInput type="text" id="cabinetName" label="Ваше имя"}}
+            {{> floatInput type="text" id="cabinetSurname" label="Ваша фамилия"}}
+            {{> floatInput type="text" id="cabinetBirthday" label="Дата рождения"}}
+          </div>
+          <div class="form__row form__row--triple">
+            {{> floatInput type="email" id="checkoutMail" label="Ваша почта"}}
+            {{> floatInput type="tel" id="checkoutTel" label="Ваш телефон"}}
+          </div>
+          <div class="form__row cabinet__actions">
+            <a href="#" class="btn btn--outline">Сбросить пароль</a>
+            <button class="btn btn--outline" type="submit">Изменить данные</button>
+          </div>
+        </form>
+        <div class="cabinet__addresses">
+          <h2 class="secondary-title">
+            мои адреса
+          </h2>
+          <p>Адрес:</p>
+          <p>Москва</p>
+          <p>ул. Волхонка, 12. Подъезд 3. Этаж 4. Квартира 25</p>
+          <p>Код подъезда 425</p>
+          <div class="cabinet__addresses-action">
+            <a href="#" class="btn btn--outline">Изменить адрес</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
