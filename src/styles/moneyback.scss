@@ -1,0 +1,104 @@
+.moneyback {
+  p {
+    margin: 0 0 15px;
+  }
+}
+
+.moneyback__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.moneyback__custom-reason {
+  display: flex;
+  align-items: center;
+
+  label {
+    margin: 0;
+  }
+
+  .check__box {
+    margin-top: -5px;
+  }
+}
+
+.moneyback__steps-container {
+  overflow: hidden;
+}
+
+.moneyback__steps {
+  width: 200%;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+
+.moneyback__step {
+  width: 50%;
+}
+
+.js-moneyback-apply {
+  display: none;
+}
+
+.moneyback--step-2 {
+  .moneyback__steps {
+    transform: translateX(-50%);
+  }
+
+  .js-moneyback-next {
+    display: none;
+  }
+
+  .js-moneyback-apply {
+    display: flex;
+  }
+}
+
+.moneyback__item {
+  display: flex;
+}
+
+.moneyback__item-img {
+  width: 69px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.moneyback__item-desc {
+  flex-grow: 1;
+  padding-right: 40px;
+  font-size: 20px;
+
+  .number-input {
+    margin-top: 10px;
+  }
+}
+
+.moneyback__item-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-shrink: 0;
+
+  span {
+    font-weight: 500;
+  }
+}
+
+@media screen and(max-width: 655px) {
+  .moneyback {
+    .form__row + .form__row {
+      margin-top: 0;
+    }
+  }
+
+  .moneyback__custom-reason {
+    margin-top: 10px;
+  }
+
+  .moneyback__item {
+    flex-direction: column;
+  }
+}

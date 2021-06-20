@@ -1,4 +1,4 @@
-<div class="float-input">
+<div class="float-input {{#ifequal disabled 'true'}} disabled {{/ifequal}}">
   <label for="{{id}}">{{ label }}</label>
   <input id="{{id}}" type="{{type}}">
 </div>

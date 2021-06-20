@@ -657,6 +657,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryPosition = checkoutSummary ? checkoutSummary.getBoundingClientRect().top - document.body.getBoundingClientRect().top : null;
   const summaryHeight =  checkoutSummary ? checkoutSummary.offsetHeight : null;
   const formSwitchBlock = document.querySelector('.checkout .switch');
+  const moneybackBlock = document.querySelectorAll('.js-moneyback');
+  const moneybackNextButton = document.querySelector('.js-moneyback-next')
 
   const debounce = function (fn) {
     let timeout;
@@ -884,6 +886,24 @@ document.addEventListener("DOMContentLoaded", () => {
          }
         })
      })
+  }
+
+  if (moneybackBlock) {
+    const moneybackEl = document.querySelector('.moneyback');
+    const moneybackModal = new Modal(moneybackEl);
+    moneybackBlock.forEach((item) => {
+      item.addEventListener('click', moneybackModal.open);
+    })
+  }
+
+  if (moneybackNextButton) {
+    moneybackNextButton.addEventListener('click', function() {
+      const container = document.querySelector('.moneyback');
+      const title = document.querySelector('.moneyback .modal__title');
+      container.classList.remove('moneyback--step-1');
+      container.classList.add('moneyback--step-2');
+      title.innerHTML = "Возврат товара шаг (2 из 2)";
+    });
   }
 
   getDimensions();
