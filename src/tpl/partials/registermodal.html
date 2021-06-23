@@ -1,0 +1,64 @@
+<div class="modal modal--register" data-close="true" tabindex="-1">
+  <div class="modal__dialog">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h5 class="modal__title modal__title--light">Зарегистрироваться</h5>
+        <button type="button" class="modal__close" data-close="true" aria-label="Close">
+          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+            <path
+              d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
+              fill="#fff" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <form class="form" id="registerForm">
+          <div class="form__row form__row--double">
+            {{> floatInput type="text" id="registerName" label="Ваше имя"}}
+            {{> floatInput type="text" id="registerSurname" label="Ваша фамилия"}}
+          </div>
+          <div class="form__row form__row--double">
+            {{> floatInput type="email" id="registerEmail" label="Ваша почта"}}
+            {{> floatInput type="text" id="registerBirthday" label="Дата рождения"}}
+          </div>
+          <div class="form__row form__row--double">
+            {{> floatInput type="password" id="registerPassword" label="Ваш пароль"}}
+            {{> floatInput type="password" id="registerPasswordConfirm" label="Повторите пароль"}}
+          </div>
+          <div class="form__row form__row--double">
+            <div>
+              <label class="check">
+                <input
+                  type="checkbox"
+                  class="check__input"
+                  id="regData"
+                  name="regData"
+                  value="yes"
+                />
+                <span class="check__box"></span>
+                Я прочитал и согласен с правилами «Соглашение на обработку персональных данных»
+              </label>
+            </div>
+            <div>
+              <label class="check">
+                <input
+                  type="checkbox"
+                  class="check__input"
+                  id="regAdv"
+                  name="regAdv"
+                  value="yes"
+                />
+                <span class="check__box"></span>
+                Согласен на получение рекламной рассылки
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal__footer">
+        <a href="#" class="btn btn--outline">Уже есть аккаунт</a>
+        <button type="submit" form="registerForm" class="btn btn--outline">Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+</div>

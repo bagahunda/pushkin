@@ -1,0 +1,80 @@
+---
+layout: cabinet
+title: Cabinet
+breadcrumbs:
+  -
+    url: '/'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Личный кабинет'
+  -
+    url: '#'
+    title: 'Подписки'
+---
+
+{{> breadcrumbs}}
+
+{{> subheader title='Подписки' lead=' В личном кабинете вы можете проверить ход выполнения ваших заказов, просмотреть или изменить личные данные или подписаться на рассылки магазина.'}}
+
+<div class="cabinetSubscribes">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-3">
+        <div class="cabinet__nav">
+          <a href="./cabinet.html" class="cabinet__link">Личные данные</a>
+          <a href="./cabinet-orders.html" class="cabinet__link">Заказы</a>
+          <a href="./cabinet-wishlist.html" class="cabinet__link">Список желаний</a>
+          <a href="./cabinet-subscribes.html" class="cabinet__link cabinet__link--active">Подписки</a>
+          <a href="#" class="cabinet__link">Выход</a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="cabinetSubscribes__items">
+          <div class="cabinetSubscribe__item">
+            <div class="cabinetSubscribe__item-img">
+              <img src="./dist/images/leaders1.jpg" alt="">
+            </div>
+            <div class="cabinetSubscribe__item-desc">
+              <span>Текущая подписка:</span>
+              Новости магазина
+            </div>
+            <div class="cabinetSubscribe__item-action">
+              <button class="btn btn--ghost cabinetSubscribe__item-remove js-subscribe-remove">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 25"><path d="M17.5 20.75a3.75 3.75 0 01-3.75 3.75H5a3.75 3.75 0 01-3.75-3.75v-15H0V2h5.625L6.875.75h5L13.125 2h5.625v3.75H17.5v15zm-15-15v15a2.5 2.5 0 002.5 2.5h8.75a2.5 2.5 0 002.5-2.5v-15H2.5zm15-1.25V3.25h-5L11.25 2H7.5L6.25 3.25h-5V4.5H17.5zM5 8.25h1.25v12.5H5V8.25zm7.5 0h1.25v12.5H12.5V8.25z" fill="#262626"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="cabinetSubscribe__item">
+            <div class="cabinetSubscribe__item-img">
+              <img src="./dist/images/leaders1.jpg" alt="">
+            </div>
+            <div class="cabinetSubscribe__item-desc">
+              <span>Текущая подписка:</span>
+              События магазина
+            </div>
+            <div class="cabinetSubscribe__item-action">
+              <button class="btn btn--ghost cabinetSubscribe__item-remove js-subscribe-remove">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 25"><path d="M17.5 20.75a3.75 3.75 0 01-3.75 3.75H5a3.75 3.75 0 01-3.75-3.75v-15H0V2h5.625L6.875.75h5L13.125 2h5.625v3.75H17.5v15zm-15-15v15a2.5 2.5 0 002.5 2.5h8.75a2.5 2.5 0 002.5-2.5v-15H2.5zm15-1.25V3.25h-5L11.25 2H7.5L6.25 3.25h-5V4.5H17.5zM5 8.25h1.25v12.5H5V8.25zm7.5 0h1.25v12.5H12.5V8.25z" fill="#262626"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="cabinetSubscribe__item">
+            <div class="cabinetSubscribe__item-img">
+              <img src="./dist/images/leaders1.jpg" alt="">
+            </div>
+            <div class="cabinetSubscribe__item-desc">
+              <span>Текущая подписка:</span>
+              Акции и предложения
+            </div>
+            <div class="cabinetSubscribe__item-action">
+              <button class="btn btn--ghost cabinetSubscribe__item-remove js-subscribe-remove">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 25"><path d="M17.5 20.75a3.75 3.75 0 01-3.75 3.75H5a3.75 3.75 0 01-3.75-3.75v-15H0V2h5.625L6.875.75h5L13.125 2h5.625v3.75H17.5v15zm-15-15v15a2.5 2.5 0 002.5 2.5h8.75a2.5 2.5 0 002.5-2.5v-15H2.5zm15-1.25V3.25h-5L11.25 2H7.5L6.25 3.25h-5V4.5H17.5zM5 8.25h1.25v12.5H5V8.25zm7.5 0h1.25v12.5H12.5V8.25z" fill="#262626"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

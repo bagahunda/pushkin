@@ -566,6 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const countrySelector = document.querySelector("#countrySelect");
   const citySelector = document.querySelector("#citySelect");
+  const cabinetCitySelector = document.querySelector('#cabinetCountrySelect');
 
   if (countrySelector) {
      const countrySelect = new Select(countrySelector, {
@@ -581,6 +582,14 @@ document.addEventListener("DOMContentLoaded", () => {
            console.log('city seected ->', e.trim());
         }
      })
+  }
+
+  if (cabinetCitySelector) {
+    const cabinetCitySelect = new Select(cabinetCitySelector, {
+      onSelect(e) {
+        console.log('city seected ->', e.trim());
+      }
+    })
   }
 
   // FLOAT LABELS
@@ -658,7 +667,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryHeight =  checkoutSummary ? checkoutSummary.offsetHeight : null;
   const formSwitchBlock = document.querySelector('.checkout .switch');
   const moneybackBlock = document.querySelectorAll('.js-moneyback');
-  const moneybackNextButton = document.querySelector('.js-moneyback-next')
+  const moneybackNextButton = document.querySelector('.js-moneyback-next');
+  const subscribeRemoveBtns = document.querySelectorAll('.js-subscribe-remove');
+  const changeAddressButton = document.querySelector('.js-change-address');
+  const loginButtons = document.querySelectorAll('.js-login');
+  const registerButtons = document.querySelectorAll('.js-register');
 
   const debounce = function (fn) {
     let timeout;
@@ -888,7 +901,7 @@ document.addEventListener("DOMContentLoaded", () => {
      })
   }
 
-  if (moneybackBlock) {
+  if (moneybackBlock && moneybackBlock.length) {
     const moneybackEl = document.querySelector('.moneyback');
     const moneybackModal = new Modal(moneybackEl);
     moneybackBlock.forEach((item) => {
@@ -904,6 +917,52 @@ document.addEventListener("DOMContentLoaded", () => {
       container.classList.add('moneyback--step-2');
       title.innerHTML = "Возврат товара шаг (2 из 2)";
     });
+  }
+
+  if (subscribeRemoveBtns) {
+    subscribeRemoveBtns.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        const target = e.target.closest(".cabinetSubscribe__item");
+        target.classList.add("cabinetSubscribe__item--removed");
+        setTimeout(() => {
+          target.remove();
+        }, 300);
+      });
+    });
+  }
+
+  if (changeAddressButton) {
+    changeAddressButton.addEventListener('click', function(e) {
+      const isSave = e.target.textContent === 'Сохранить изменения';
+      const form = document.querySelector('.cabinet__addresses .form');
+      if (isSave) {
+        form.classList.remove('form--edit');
+        e.target.textContent = "Изменить адрес"
+      } else {
+        form.classList.add('form--edit');
+        e.target.textContent = "Сохранить изменения"
+      }
+    });
+  }
+
+  if (loginButtons && loginButtons.length) {
+    const loginModal = new Modal('.modal--login');
+    loginButtons.forEach((item) => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginModal.open();
+      })
+    })
+  }
+
+  if (registerButtons && registerButtons.lenth) {
+    const registerModal = new Modal('.modal--register');
+    registerButtons.forEach((item) => {
+      item.addEventListener('click', function(e){
+        e.preventDefault();
+        registerModal.open();
+      })
+    })
   }
 
   getDimensions();

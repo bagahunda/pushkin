@@ -35,14 +35,14 @@
   &--double {
     justify-content: space-between;
 
-    & > .float-input, & > .select {
+    & > .float-input, & > .select, & > div {
       width: calc((100% - 30px) / 2);
     }
   }
 
   &--triple {
 
-    & > .float-input, & > .select {
+    & > .float-input, & > .select, & > div {
       width: calc((100% - 60px) / 3);
 
       &:not(:last-child) {

@@ -20,9 +20,9 @@ breadcrumbs:
       <div class="col-12 col-lg-3">
         <div class="cabinet__nav">
           <a href="#" class="cabinet__link cabinet__link--active">Личные данные</a>
-          <a href="#" class="cabinet__link">Заказы</a>
-          <a href="#" class="cabinet__link">Список желаний</a>
-          <a href="#" class="cabinet__link">Подписки</a>
+          <a href="./cabinet-orders.html" class="cabinet__link">Заказы</a>
+          <a href="./cabinet-wishlist.html" class="cabinet__link">Список желаний</a>
+          <a href="./cabinet-subscribes.html" class="cabinet__link">Подписки</a>
           <a href="#" class="cabinet__link">Выход</a>
         </div>
       </div>
@@ -46,12 +46,30 @@ breadcrumbs:
           <h2 class="secondary-title">
             мои адреса
           </h2>
-          <p>Адрес:</p>
-          <p>Москва</p>
-          <p>ул. Волхонка, 12. Подъезд 3. Этаж 4. Квартира 25</p>
-          <p>Код подъезда 425</p>
+          <div class="form">
+            <div class="form__row">
+              Адрес:
+            </div>
+            <div class="form__row">
+              <span>Москва</span>
+              <div class="select" id="cabinetCountrySelect" tabindex="0">
+                <select name="country" id="cabinetCountry" data-placeholder="Город">
+                  <option value="russia">Москва</option>
+                  <option value="notrussia">Не Москва</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__row">
+              <span>ул. Волхонка, 12. Подъезд 3. Этаж 4. Квартира 25</span>
+              {{> floatInput type="text" id="editAddress" label="Адрес" value="ул. Волхонка, 12. Подъезд 3. Этаж 4. Квартира 25"}}
+            </div>
+            <div class="form__row">
+              <span>Код подъезда 425</span>
+              {{> floatInput type="text" id="editAddressComment" label="Комментарий к адресу" value="Код подъезда 425"}}
+            </div>
+          </div>
           <div class="cabinet__addresses-action">
-            <a href="#" class="btn btn--outline">Изменить адрес</a>
+            <button type="button" class="btn btn--outline js-change-address">Изменить адрес</a>
           </div>
         </div>
       </div>
