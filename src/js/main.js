@@ -672,6 +672,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const changeAddressButton = document.querySelector('.js-change-address');
   const loginButtons = document.querySelectorAll('.js-login');
   const registerButtons = document.querySelectorAll('.js-register');
+  const cancelOrderButton = document.querySelectorAll('.js-cancel-order');
+  const resetPasswordButton = document.querySelector('.js-reset-password');
 
   const debounce = function (fn) {
     let timeout;
@@ -962,6 +964,35 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         registerModal.open();
       })
+    })
+  }
+
+  if (cancelOrderButton && cancelOrderButton.length) {
+    const cancelOrderModal = new Modal('.modal--cancel-order');
+    const confirmedModal = new Modal('.modal--cancel-confirmed');
+    cancelOrderButton.forEach((item) => {
+      item.addEventListener('click', function() {
+        cancelOrderModal.open();
+        const confirmBtn = document.querySelector('.js-cancel-order-confirm');
+        confirmBtn.addEventListener('click', function() {
+          cancelOrderModal.close();
+          confirmedModal.open();
+        })
+      })
+    })
+  }
+
+  if (resetPasswordButton) {
+    resetPasswordButton.addEventListener('click', function(e) {
+      const isReseting = e.target.textContent === 'Сохранить пароль'
+      const parent = document.querySelector('.cabinet__form');
+      if (isReseting) {
+        parent.classList.remove('cabinet__form--password-edit');
+        e.target.textContent = "Сбросить пароль"
+      } else {
+        parent.classList.add('cabinet__form--password-edit');
+        e.target.textContent = "Сохранить пароль"
+      }
     })
   }
 

@@ -86,7 +86,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </a>
-                  <a href="#" class="header__icons-item">
+                  <a href="cabinet-wishlist.html" class="header__icons-item">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
@@ -139,7 +139,7 @@
                   </div>
                 </div>
                 <div class="modal__footer">
-                  <a href="#" class="btn btn--outline">Забыли пароль</a>
+                  <a href="#" class="btn btn--outline">Забыли пароль?</a>
                   <button type="submit" form="loginForm" class="btn btn--outline">Войти в кабинет</button>
                 </div>
               </div>
@@ -2746,8 +2746,16 @@
                   <label for="checkoutTel">Ваш телефон</label>
                   <input id="checkoutTel" type="tel" value="">
                 </div>          </div>
+              <div class="form__row form__row--triple reset-password">
+                <div class="float-input ">
+                  <label for="newPassword">Новый пароль</label>
+                  <input id="newPassword" type="password" value="">
+                </div>            <div class="float-input ">
+                  <label for="newPasswordConfirm">Подтвердите новый пароль</label>
+                  <input id="newPasswordConfirm" type="password" value="">
+                </div>          </div>
               <div class="form__row cabinet__actions">
-                <a href="#" class="btn btn--outline">Сбросить пароль</a>
+                <a href="#" class="btn btn--outline js-reset-password">Сбросить пароль</a>
                 <button class="btn btn--outline" type="submit">Изменить данные</button>
               </div>
             </form>

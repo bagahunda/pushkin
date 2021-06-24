@@ -37,8 +37,12 @@ breadcrumbs:
             {{> floatInput type="email" id="checkoutMail" label="Ваша почта"}}
             {{> floatInput type="tel" id="checkoutTel" label="Ваш телефон"}}
           </div>
+          <div class="form__row form__row--triple reset-password">
+            {{> floatInput type="password" id="newPassword" label="Новый пароль"}}
+            {{> floatInput type="password" id="newPasswordConfirm" label="Подтвердите новый пароль"}}
+          </div>
           <div class="form__row cabinet__actions">
-            <a href="#" class="btn btn--outline">Сбросить пароль</a>
+            <a href="#" class="btn btn--outline js-reset-password">Сбросить пароль</a>
             <button class="btn btn--outline" type="submit">Изменить данные</button>
           </div>
         </form>

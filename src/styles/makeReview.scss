@@ -73,7 +73,7 @@
   .form__row--double {
     flex-direction: column;
 
-    .input, .float-input, .select {
+    & > .input, & > .float-input, & > .select, & > div {
       width: 100%;
 
       &:not(:last-child) {

@@ -42,8 +42,12 @@
 }
 
 .moneyback--step-2 {
-  .moneyback__steps {
-    transform: translateX(-50%);
+  // .moneyback__steps {
+  //   transform: translateX(-50%);
+  // }
+
+  .moneyback__step:first-child {
+    display: none;
   }
 
   .js-moneyback-next {
