@@ -141,6 +141,9 @@
                 <div class="modal__footer">
                   <a href="#" class="btn btn--outline">Забыли пароль?</a>
                   <button type="submit" form="loginForm" class="btn btn--outline">Войти в кабинет</button>
+                  <div class="register-link">
+                    <a href="#" class="js-login-register">Зарегистрироваться</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -148,7 +151,7 @@
             <div class="modal__dialog">
               <div class="modal__content">
                 <div class="modal__header">
-                  <h5 class="modal__title modal__title--light">Зарегистрироваться</h5>
+                  <h5 class="modal__title modal__title--light">Регистрация</h5>
                   <button type="button" class="modal__close" data-close="true" aria-label="Close">
                     <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                       <path
@@ -214,7 +217,7 @@
                   </form>
                 </div>
                 <div class="modal__footer">
-                  <a href="#" class="btn btn--outline">Уже есть аккаунт</a>
+                  <a href="#" class="btn btn--outline js-register-login">Уже есть аккаунт?</a>
                   <button type="submit" form="registerForm" class="btn btn--outline">Зарегистрироваться</button>
                 </div>
               </div>
@@ -2692,30 +2695,28 @@
           </span>
         </nav>
     </div>
-    
-    <div class="breadcrumbs">
-      <div class="container">
-          <a href="/" class="breadcrumbs__item">Главная</a>
-          <a href="#" class="breadcrumbs__item">Личный кабинет</a>
-          <a href="#" class="breadcrumbs__item">Подписки</a>
-      </div>
-    </div>
-    <div class="subheader">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-10 offset-lg-1">
-            <h1 class="subheader__title">
-              Подписки
-            </h1>
-            <p class="subheader__lead">
-               В личном кабинете вы можете проверить ход выполнения ваших заказов, просмотреть или изменить личные данные или подписаться на рассылки магазина.
-            </p>
-          </div>
+    <div class="cabinetSubscribes">
+      <div class="breadcrumbs">
+        <div class="container">
+            <a href="/" class="breadcrumbs__item">Главная</a>
+            <a href="#" class="breadcrumbs__item">Личный кабинет</a>
+            <a href="#" class="breadcrumbs__item">Подписки</a>
         </div>
       </div>
-    </div>
-    <div class="cabinetSubscribes">
-      <div class="container">
+      <div class="subheader">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1">
+              <h1 class="subheader__title">
+                Подписки
+              </h1>
+              <p class="subheader__lead">
+                 В личном кабинете вы можете проверить ход выполнения ваших заказов, просмотреть или изменить личные данные или подписаться на рассылки магазина.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>  <div class="container">
         <div class="row">
           <div class="col-12 col-lg-3">
             <div class="cabinet__nav">

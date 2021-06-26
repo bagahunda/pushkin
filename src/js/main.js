@@ -371,6 +371,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const listener = function (event) {
       if (event.target.dataset.close) {
         close();
+        setTimeout(() => {
+          userOptions.onClose ? userOptions.onClose() : null;
+        }, 300);
       }
     };
 
@@ -674,6 +677,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerButtons = document.querySelectorAll('.js-register');
   const cancelOrderButton = document.querySelectorAll('.js-cancel-order');
   const resetPasswordButton = document.querySelector('.js-reset-password');
+  const loginRegisterButton = document.querySelector('.js-login-register');
+  const registerLoginButton = document.querySelector('.js-register-login');
 
   const debounce = function (fn) {
     let timeout;
@@ -905,9 +910,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (moneybackBlock && moneybackBlock.length) {
     const moneybackEl = document.querySelector('.moneyback');
-    const moneybackModal = new Modal(moneybackEl);
+    const moneybackModal = new Modal(moneybackEl, {
+      onClose: function() {
+        const container = document.querySelector('.moneyback');
+        const title = document.querySelector('.moneyback .modal__title');
+        container.classList.add('moneyback--step-1');
+        container.classList.remove('moneyback--step-2');
+        title.innerHTML = "Возврат товара шаг (1 из 2)";  
+      }
+    });
+    const moneyBackConfirmModal = new Modal('.modal--moneyback-confirmed');
     moneybackBlock.forEach((item) => {
       item.addEventListener('click', moneybackModal.open);
+    });
+    const moneyBackApplyButton = document.querySelector('.js-moneyback-apply');
+    moneyBackApplyButton.addEventListener('click', function() {
+      moneybackModal.close();
+      setTimeout(() => {
+        moneyBackConfirmModal.open();
+      }, 300);
     })
   }
 
@@ -949,21 +970,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (loginButtons && loginButtons.length) {
     const loginModal = new Modal('.modal--login');
+
     loginButtons.forEach((item) => {
       item.addEventListener('click', function(e) {
         e.preventDefault();
         loginModal.open();
       })
     })
-  }
 
-  if (registerButtons && registerButtons.lenth) {
     const registerModal = new Modal('.modal--register');
+    loginRegisterButton.addEventListener('click', function() {
+      loginModal.close();
+      setTimeout(() => {
+        registerModal.open();
+      }, 300);
+    });
     registerButtons.forEach((item) => {
       item.addEventListener('click', function(e){
         e.preventDefault();
         registerModal.open();
       })
+    });
+    registerLoginButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      registerModal.close();
+      setTimeout(() => {
+        loginModal.open();
+      }, 300);
     })
   }
 
@@ -976,7 +1009,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const confirmBtn = document.querySelector('.js-cancel-order-confirm');
         confirmBtn.addEventListener('click', function() {
           cancelOrderModal.close();
-          confirmedModal.open();
+          setTimeout(() => {
+            confirmedModal.open();
+          }, 300);
         })
       })
     })
