@@ -1,0 +1,44 @@
+<div class="modal fade moneyback" id="moneybackModal2">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Возврат товара шаг (2 из 2)</h5>
+        <button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
+          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+            <path
+              d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
+              fill="#fff" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="moneyback__items">
+          <div class="moneyback__item">
+            <div class="moneyback__item-img">
+              <img src="./dist/images/leader-hero.jpg" alt="">
+            </div>
+            <div class="moneyback__item-desc">
+              Статуэтка богини Бастет в образе кошки. Позднее царство. VII–VI века до н. э.
+              {{> numberInput }}
+            </div>
+            <div class="moneyback__item-price">
+              <span>12 240 ₽</span>
+              <label class="check">
+                <input
+                  type="checkbox"
+                  class="check__input"
+                  value="Статуэтка богини Бастет в образе кошки. Позднее царство. VII–VI века до н. э."
+                />
+                <span class="check__box"></span>
+                Товар для возврата
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--outline" data-bs-target="#moneybackConfermModal" data-bs-toggle="modal" data-bs-dismiss="modal">Оформить возврат</button>
+      </div>
+    </div>
+  </div>
+</div>

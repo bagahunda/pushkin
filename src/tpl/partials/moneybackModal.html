@@ -1,9 +1,9 @@
-<div class="modal moneyback moneyback--step-1" data-close="true" tabindex="-1">
-  <div class="modal__dialog">
-    <div class="modal__content">
-      <div class="modal__header">
-        <h5 class="modal__title">Возврат товара шаг (1 из 2)</h5>
-        <button type="button" class="modal__close" data-close="true" aria-label="Close">
+<div class="modal fade moneyback" id="moneybackModal1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Возврат товара шаг (1 из 2)</h5>
+        <button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
             <path
               d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
@@ -11,80 +11,49 @@
           </svg>
         </button>
       </div>
-      <div class="modal__body">
-        <div class="moneyback__steps-container">
-          <div class="moneyback__steps">
-            <div class="moneyback__step">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan molestie tortor cras dui, ornare amet id
-                orci proin. Aliquam nunc amet, sollicitudin nisl ullamcorper facilisis. Ultrices turpis commodo aliquam
-                eleifend nunc cras. Luctus donec bibendum gravida risus dolor hac. Elementum pharetra.
-              </p>
-              <h6 class="moneyback__title">Причины возврата:</h6>
-              <div class="form__row form__row--double">
-                <div>
-                  <label class="radio">
-                    <input type="radio" class="radio__input" id="dislike" name="deliveryOption" value="не подошло" />
-                    <span class="radio__box"></span>
-                    Не подошло
-                  </label>
-                </div>
-                <div>
-                  <label class="radio">
-                    <input type="radio" class="radio__input" id="not-correct" name="deliveryOption"
-                      value="не соответствует описанию" />
-                    <span class="radio__box"></span>
-                    Не соответствует описанию
-                  </label>
-                </div>
-              </div>
-              <div class="form__row form__row--double">
-                <div>
-                  <label class="radio">
-                    <input type="radio" class="radio__input" id="broken" name="deliveryOption" value="брак" />
-                    <span class="radio__box"></span>
-                    Брак
-                  </label>
-                </div>
-                <div class="moneyback__custom-reason">
-                  <label class="check">
-                    <input type="checkbox" class="check__input" id="agreement" name="agreement" value="yes" />
-                    <span class="check__box"></span>
-                  </label>
-                  {{> floatInput type="text" id="moneybackReason" label="Другое"}}
-                </div>
-              </div>
-            </div>
-            <div class="moneyback__step">
-              <div class="moneyback__items">
-                <div class="moneyback__item">
-                  <div class="moneyback__item-img">
-                    <img src="./dist/images/leader-hero.jpg" alt="">
-                  </div>
-                  <div class="moneyback__item-desc">
-                    Статуэтка богини Бастет в образе кошки. Позднее царство. VII–VI века до н. э.
-                    {{> numberInput }}
-                  </div>
-                  <div class="moneyback__item-price">
-                    <span>12 240 ₽</span>
-                    <label class="check">
-                      <input
-                        type="checkbox"
-                        class="check__input"
-                        value="Статуэтка богини Бастет в образе кошки. Позднее царство. VII–VI века до н. э."
-                      />
-                      <span class="check__box"></span>
-                      Товар для возврата
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="modal-body">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan molestie tortor cras dui, ornare amet id
+          orci proin. Aliquam nunc amet, sollicitudin nisl ullamcorper facilisis. Ultrices turpis commodo aliquam
+          eleifend nunc cras. Luctus donec bibendum gravida risus dolor hac. Elementum pharetra.
+        </p>
+        <h6 class="moneyback__title">Причины возврата:</h6>
+        <div class="form__row form__row--double">
+          <div>
+            <label class="radio">
+              <input type="radio" class="radio__input" id="dislike" name="deliveryOption" value="не подошло" />
+              <span class="radio__box"></span>
+              Не подошло
+            </label>
+          </div>
+          <div>
+            <label class="radio">
+              <input type="radio" class="radio__input" id="not-correct" name="deliveryOption"
+                value="не соответствует описанию" />
+              <span class="radio__box"></span>
+              Не соответствует описанию
+            </label>
+          </div>
+        </div>
+        <div class="form__row form__row--double">
+          <div>
+            <label class="radio">
+              <input type="radio" class="radio__input" id="broken" name="deliveryOption" value="брак" />
+              <span class="radio__box"></span>
+              Брак
+            </label>
+          </div>
+          <div class="moneyback__custom-reason">
+            <label class="check">
+              <input type="checkbox" class="check__input" id="agreement" name="agreement" value="yes" />
+              <span class="check__box"></span>
+            </label>
+            {{> floatInput type="text" id="moneybackReason" label="Другое"}}
           </div>
         </div>
       </div>
-      <div class="modal__footer">
-        <button type="button" class="btn btn--outline js-moneyback-next">Следующий шаг</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--outline" data-bs-target="#moneybackModal2" data-bs-toggle="modal" data-bs-dismiss="modal">Следующий шаг</button>
         <button type="button" class="btn btn--outline js-moneyback-apply">Оформить возврат</button>
       </div>
     </div>

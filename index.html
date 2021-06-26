@@ -81,7 +81,7 @@
                   </div>
                 </div>
                 <div class="header__icons-items">
-                  <a href="#" class="header__icons-item js-login">
+                  <a href="#" class="header__icons-item" data-bs-toggle="modal" data-bs-target="#loginModal">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
@@ -113,116 +113,7 @@
               </div>
             </div>
           </div>
-          <div class="modal modal--login" data-close="true" tabindex="-1">
-            <div class="modal__dialog">
-              <div class="modal__content">
-                <div class="modal__header">
-                  <h5 class="modal__title modal__title--light">Войти в личный кабинет</h5>
-                  <button type="button" class="modal__close" data-close="true" aria-label="Close">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                      <path
-                        d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
-                        fill="#fff" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="modal__body">
-                  <div class="form">
-                    <form class="form__row form__row--double" id="loginForm">
-                      <div class="float-input ">
-                        <label for="loginEmail">Ваша почта</label>
-                        <input id="loginEmail" type="email" value="">
-                      </div>            <div class="float-input ">
-                        <label for="loginPassword">Ваш пароль</label>
-                        <input id="loginPassword" type="password" value="">
-                      </div>          </form>
-                  </div>
-                </div>
-                <div class="modal__footer">
-                  <a href="#" class="btn btn--outline">Забыли пароль?</a>
-                  <button type="submit" form="loginForm" class="btn btn--outline">Войти в кабинет</button>
-                  <div class="register-link">
-                    <a href="#" class="js-login-register">Зарегистрироваться</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>  <div class="modal modal--register" data-close="true" tabindex="-1">
-            <div class="modal__dialog">
-              <div class="modal__content">
-                <div class="modal__header">
-                  <h5 class="modal__title modal__title--light">Регистрация</h5>
-                  <button type="button" class="modal__close" data-close="true" aria-label="Close">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                      <path
-                        d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
-                        fill="#fff" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="modal__body">
-                  <form class="form" id="registerForm">
-                    <div class="form__row form__row--double">
-                      <div class="float-input ">
-                        <label for="registerName">Ваше имя</label>
-                        <input id="registerName" type="text" value="">
-                      </div>            <div class="float-input ">
-                        <label for="registerSurname">Ваша фамилия</label>
-                        <input id="registerSurname" type="text" value="">
-                      </div>          </div>
-                    <div class="form__row form__row--double">
-                      <div class="float-input ">
-                        <label for="registerEmail">Ваша почта</label>
-                        <input id="registerEmail" type="email" value="">
-                      </div>            <div class="float-input ">
-                        <label for="registerBirthday">Дата рождения</label>
-                        <input id="registerBirthday" type="text" value="">
-                      </div>          </div>
-                    <div class="form__row form__row--double">
-                      <div class="float-input ">
-                        <label for="registerPassword">Ваш пароль</label>
-                        <input id="registerPassword" type="password" value="">
-                      </div>            <div class="float-input ">
-                        <label for="registerPasswordConfirm">Повторите пароль</label>
-                        <input id="registerPasswordConfirm" type="password" value="">
-                      </div>          </div>
-                    <div class="form__row form__row--double">
-                      <div>
-                        <label class="check">
-                          <input
-                            type="checkbox"
-                            class="check__input"
-                            id="regData"
-                            name="regData"
-                            value="yes"
-                          />
-                          <span class="check__box"></span>
-                          Я прочитал и согласен с правилами «Соглашение на обработку персональных данных»
-                        </label>
-                      </div>
-                      <div>
-                        <label class="check">
-                          <input
-                            type="checkbox"
-                            class="check__input"
-                            id="regAdv"
-                            name="regAdv"
-                            value="yes"
-                          />
-                          <span class="check__box"></span>
-                          Согласен на получение рекламной рассылки
-                        </label>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal__footer">
-                  <a href="#" class="btn btn--outline js-register-login">Уже есть аккаунт?</a>
-                  <button type="submit" form="registerForm" class="btn btn--outline">Зарегистрироваться</button>
-                </div>
-              </div>
-            </div>
-          </div></header>
+        </header>
         <nav class="nav">
           <ul class="container justify-content-between">
             <li class="nav__link nav__link--submenu">
@@ -3685,8 +3576,118 @@
           </a>
         </div>
       </div>
-    </footer>    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    </footer>    <div class="modal fade modal--login" id="loginModal">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title modal-title--light">Войти в личный кабинет</h5>
+            <button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                <path
+                  d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
+                  fill="#fff" />
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form">
+              <form class="form__row form__row--double" id="loginForm">
+                <div class="float-input ">
+                  <label for="loginEmail">Ваша почта</label>
+                  <input id="loginEmail" type="email" value="">
+                </div>            <div class="float-input ">
+                  <label for="loginPassword">Ваш пароль</label>
+                  <input id="loginPassword" type="password" value="">
+                </div>          </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn--outline">Забыли пароль?</a>
+            <button type="submit" form="loginForm" class="btn btn--outline">Войти в кабинет</button>
+            <div class="register-link">
+              <a href="#" data-bs-target="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal">Зарегистрироваться</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="modal fade modal--register" id="registerModal">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title modal-title--light">Регистрация</h5>
+            <button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                <path
+                  d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
+                  fill="#fff" />
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form" id="registerForm">
+              <div class="form__row form__row--double">
+                <div class="float-input ">
+                  <label for="registerName">Ваше имя</label>
+                  <input id="registerName" type="text" value="">
+                </div>            <div class="float-input ">
+                  <label for="registerSurname">Ваша фамилия</label>
+                  <input id="registerSurname" type="text" value="">
+                </div>          </div>
+              <div class="form__row form__row--double">
+                <div class="float-input ">
+                  <label for="registerEmail">Ваша почта</label>
+                  <input id="registerEmail" type="email" value="">
+                </div>            <div class="float-input ">
+                  <label for="registerBirthday">Дата рождения</label>
+                  <input id="registerBirthday" type="text" value="">
+                </div>          </div>
+              <div class="form__row form__row--double">
+                <div class="float-input ">
+                  <label for="registerPassword">Ваш пароль</label>
+                  <input id="registerPassword" type="password" value="">
+                </div>            <div class="float-input ">
+                  <label for="registerPasswordConfirm">Повторите пароль</label>
+                  <input id="registerPasswordConfirm" type="password" value="">
+                </div>          </div>
+              <div class="form__row form__row--double">
+                <div>
+                  <label class="check">
+                    <input
+                      type="checkbox"
+                      class="check__input"
+                      id="regData"
+                      name="regData"
+                      value="yes"
+                    />
+                    <span class="check__box"></span>
+                    Я прочитал и согласен с правилами «Соглашение на обработку персональных данных»
+                  </label>
+                </div>
+                <div>
+                  <label class="check">
+                    <input
+                      type="checkbox"
+                      class="check__input"
+                      id="regAdv"
+                      name="regAdv"
+                      value="yes"
+                    />
+                    <span class="check__box"></span>
+                    Согласен на получение рекламной рассылки
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn--outline" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Уже есть аккаунт?</a>
+            <button type="submit" form="registerForm" class="btn btn--outline">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </div>    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./dist/js/accordeon.min.js"></script>
+    <script src="./dist/js/modal.js"></script>
     <script src="./dist/js/main.js?v=1.0.0"></script>
 </body>
 </html>

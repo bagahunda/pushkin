@@ -416,12 +416,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   };
 
-  const reviewModalBlock = document.querySelector(".review-modal");
-  if (reviewModalBlock) {
-    const reviewModal = new Modal(reviewModalBlock);
-    const reviewModalBtn = document.querySelector(".js-review-modal");
-    reviewModalBtn.addEventListener("click", reviewModal.open);
-  }
+  // const reviewModalBlock = document.querySelector(".review-modal");
+  // if (reviewModalBlock) {
+  //   const reviewModal = new Modal(reviewModalBlock);
+  //   const reviewModalBtn = document.querySelector(".js-review-modal");
+  //   reviewModalBtn.addEventListener("click", reviewModal.open);
+  // }
 
   // SELECT
 
@@ -673,12 +673,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const moneybackNextButton = document.querySelector('.js-moneyback-next');
   const subscribeRemoveBtns = document.querySelectorAll('.js-subscribe-remove');
   const changeAddressButton = document.querySelector('.js-change-address');
-  const loginButtons = document.querySelectorAll('.js-login');
-  const registerButtons = document.querySelectorAll('.js-register');
-  const cancelOrderButton = document.querySelectorAll('.js-cancel-order');
   const resetPasswordButton = document.querySelector('.js-reset-password');
-  const loginRegisterButton = document.querySelector('.js-login-register');
-  const registerLoginButton = document.querySelector('.js-register-login');
 
   const debounce = function (fn) {
     let timeout;
@@ -908,40 +903,6 @@ document.addEventListener("DOMContentLoaded", () => {
      })
   }
 
-  if (moneybackBlock && moneybackBlock.length) {
-    const moneybackEl = document.querySelector('.moneyback');
-    const moneybackModal = new Modal(moneybackEl, {
-      onClose: function() {
-        const container = document.querySelector('.moneyback');
-        const title = document.querySelector('.moneyback .modal__title');
-        container.classList.add('moneyback--step-1');
-        container.classList.remove('moneyback--step-2');
-        title.innerHTML = "Возврат товара шаг (1 из 2)";  
-      }
-    });
-    const moneyBackConfirmModal = new Modal('.modal--moneyback-confirmed');
-    moneybackBlock.forEach((item) => {
-      item.addEventListener('click', moneybackModal.open);
-    });
-    const moneyBackApplyButton = document.querySelector('.js-moneyback-apply');
-    moneyBackApplyButton.addEventListener('click', function() {
-      moneybackModal.close();
-      setTimeout(() => {
-        moneyBackConfirmModal.open();
-      }, 300);
-    })
-  }
-
-  if (moneybackNextButton) {
-    moneybackNextButton.addEventListener('click', function() {
-      const container = document.querySelector('.moneyback');
-      const title = document.querySelector('.moneyback .modal__title');
-      container.classList.remove('moneyback--step-1');
-      container.classList.add('moneyback--step-2');
-      title.innerHTML = "Возврат товара шаг (2 из 2)";
-    });
-  }
-
   if (subscribeRemoveBtns) {
     subscribeRemoveBtns.forEach((button) => {
       button.addEventListener("click", function (e) {
@@ -966,55 +927,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.target.textContent = "Сохранить изменения"
       }
     });
-  }
-
-  if (loginButtons && loginButtons.length) {
-    const loginModal = new Modal('.modal--login');
-
-    loginButtons.forEach((item) => {
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-        loginModal.open();
-      })
-    })
-
-    const registerModal = new Modal('.modal--register');
-    loginRegisterButton.addEventListener('click', function() {
-      loginModal.close();
-      setTimeout(() => {
-        registerModal.open();
-      }, 300);
-    });
-    registerButtons.forEach((item) => {
-      item.addEventListener('click', function(e){
-        e.preventDefault();
-        registerModal.open();
-      })
-    });
-    registerLoginButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      registerModal.close();
-      setTimeout(() => {
-        loginModal.open();
-      }, 300);
-    })
-  }
-
-  if (cancelOrderButton && cancelOrderButton.length) {
-    const cancelOrderModal = new Modal('.modal--cancel-order');
-    const confirmedModal = new Modal('.modal--cancel-confirmed');
-    cancelOrderButton.forEach((item) => {
-      item.addEventListener('click', function() {
-        cancelOrderModal.open();
-        const confirmBtn = document.querySelector('.js-cancel-order-confirm');
-        confirmBtn.addEventListener('click', function() {
-          cancelOrderModal.close();
-          setTimeout(() => {
-            confirmedModal.open();
-          }, 300);
-        })
-      })
-    })
   }
 
   if (resetPasswordButton) {
