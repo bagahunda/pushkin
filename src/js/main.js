@@ -144,6 +144,26 @@ document.addEventListener("DOMContentLoaded", () => {
     productSlider.sync(productThumbSlider).mount();
   }
 
+  // ABOUT REVIEWS SLIDER
+  const reviewsBlock = document.querySelector('.about__review-slider');
+  if (reviewsBlock) {
+    const reviewSlider = new Splide('.about__review-slider', {
+      pagination: false,
+      arrows: false,
+      perPage: 1,
+      type: 'loop'
+    });
+    reviewSlider.mount();
+    const reviewSliderNextButton = document.querySelector('.about__reviews-slider-button--next');
+    const reviewSliderPrevButton = document.querySelector('.about__reviews-slider-button--prev');
+    reviewSliderNextButton.addEventListener('click', function() {
+      reviewSlider.go('+');
+    });
+    reviewSliderPrevButton.addEventListener('click', function() {
+      reviewSlider.go('-');
+    })
+  }
+
   //STAR RATING
 
   const Starify = function (selectorOrElement, userOptions) {
@@ -415,13 +435,6 @@ document.addEventListener("DOMContentLoaded", () => {
       destroy,
     };
   };
-
-  // const reviewModalBlock = document.querySelector(".review-modal");
-  // if (reviewModalBlock) {
-  //   const reviewModal = new Modal(reviewModalBlock);
-  //   const reviewModalBtn = document.querySelector(".js-review-modal");
-  //   reviewModalBtn.addEventListener("click", reviewModal.open);
-  // }
 
   // SELECT
 
