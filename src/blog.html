@@ -1,0 +1,84 @@
+---
+layout: default
+title: Blog
+breadcrumbs:
+  -
+    url: '/'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Блог'
+---
+
+{{> breadcrumbs }}
+
+<div class="blog">
+  {{> subheader title='Новости об искусстве и <span>не только</span>' lead="Узнавайте последние новости из мира искусства, читайте интересные статьи о выставках и событиях Пушкинского музея, истории об экспонатах и многое другое"}}
+
+  <div class="container">
+    <div class="blog__filters">
+      <div class="blog__filter">
+        <div class="filter">
+          {{> switch label1="Новости" label2="События"}}
+        </div>
+      </div>
+      <div class="blog__filter">
+        <div class="dropdown">
+          <div class="dropdown__value">
+            <span>По дате буликации</span>
+            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12"><path d="M.333 5.5h10.209L6.167 1.125 6.72.5l5.417 5.417-5.417 5.416-.553-.625 4.375-4.375H.333V5.5z" fill="#262626"/></svg>
+          </div>
+          <div class="dropdown__item-menu-wrapper">
+            <div class="dropsown__item-scroll">
+              <div class="dropdown__item-menu">
+                <div class="dropdown__item-option">
+                  <a href="#">По дате буликации</a>
+                </div>
+                <div class="dropdown__item-option">
+                  <a href="#">По названию</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog__posts">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          {{> blogPostVertical title="Хранители. Братство ключа" img="blogpost1"}}
+        </div>
+        <div class="col-12 col-lg-8">
+          {{> blogPostHorizontal title="Не живопись.<br />
+          <span>Декоративно-прикладное</span> искусство из коллекции ГМИИ им. А.С. Пушкина" img="blogpost-hor-1" text='ГМИИ им. А.С. Пушкина представляет выставку «Не живопись. Декоративно-прикладное искусство из коллекции ГМИИ им. А.С. Пушкина». Впервые основной темой экспозиции станет не живопись, а керамика и текстиль, созданные знаменитыми мастерами ХХ века Пабло Пикассо, Анри Матиссом, Раулем Дюфи, Морисом Дени, Фернаном Леже. На выставке показано более 70 работ,.' type="direct"}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          {{> blogPostVertical title="Концерты в Мемориальной квартире Святослава Рихтера" img="blogpost2"}}
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          {{> blogPostVertical title="Московская жизнь Джамбаттисты Тьеполо и его сына Джандоменико" img="blogpost3"}}
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          {{> blogPostVertical title="«Грузинские палестины» Святослава Рихтера. Экспонаты из ГМИИ им. А.С. Пушкина, собраний В. Геловани и В. Платонова " img="blogpost4"}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          {{> blogPostHorizontal title="«Оставленное время. От античности к барокко» в рамках выставки «Фабрицио Плесси. Душа камня»" img="blogpost-hor-2" text="Сессия «Оставленное время. От античности к барокко» приурочена к открытию выставки «Фабрицио Плесси. Душа камня». Основная идея экспозиции — диалог произведений Фабрицио Плесси с коллекцией ГМИИ им. А.С. Пушкина и проблематизация источников классики в современности. Плесси создает видеоскульптуры, в которых классика обретает актуальное звучание и...." type="reverse"}}
+        </div>
+        <div class="col-12 col-lg-4">
+          {{> blogPostVertical title="Билл Виола. Путешествие души" img="blogpost5"}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog__pagination">
+    {{> pagination}}
+  </div>
+
+  {{> visit }}
+</div>
