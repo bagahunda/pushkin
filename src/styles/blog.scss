@@ -11,48 +11,48 @@
   align-items: center;
 }
 
-.blog__posts {
+.blog__cards {
   .row {
     align-items: stretch;
   }
 }
 
-.blogpost {
+.blogcard {
   height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #F8F8F8;
 }
 
-.blogpost__img {
+.blogcard__img {
   img {
     display: block;
   }
 }
 
-.blogpost__title {
+.blogcard__title {
   margin: 15px 0 15px;
   padding: 0 15px;
   flex-grow: 1;
   font-weight: 500;
 }
 
-.blogpost__date {
+.blogcard__date {
   padding: 0 15px;
   font-size: 14px;
   color: #828282;
 }
 
-.blogpost__desc {
+.blogcard__desc {
   // flex-grow: 1;
 }
 
-.blogpost__text {
+.blogcard__text {
   margin-top: 5px;
   padding: 0 15px;
 }
 
-.blogpost__tags {
+.blogcard__tags {
   margin-top: 25px;
   padding: 0 15px 10px;
   display: flex;
@@ -61,7 +61,7 @@
   font-weight: 500;
 }
 
-.blogpost-hor {
+.blogcard-hor {
   display: flex;
   align-items: center;
   background-color: #F8F8F8;
@@ -69,24 +69,24 @@
   &--reverse {
     flex-direction: row-reverse;
 
-    .blogpost-hor__title {
+    .blogcard-hor__title {
       left: 0;
     }
   }
 }
 
-.blogpost-hor__img {
+.blogcard-hor__img {
   width: 45%;
   background-color: #ffffff;
 }
 
-.blogpost-hor__content {
+.blogcard-hor__content {
   width: 55%;
   display: flex;
   flex-direction: column;
 }
 
-.blogpost-hor__title {
+.blogcard-hor__title {
   width: calc(100% + 280px);
   padding: 40px 15px 0;
   margin: 0;
@@ -100,20 +100,20 @@
   }
 }
 
-.blogpost-hor__date {
+.blogcard-hor__date {
   margin-top: 15px;
   padding: 0 15px;
   font-size: 14px;
   color: #828282;
 }
 
-.blogpost-hor__text {
+.blogcard-hor__text {
   margin-top: 30px;
   padding: 0 15px;
   flex-grow: 1;
 }
 
-.blogpost-hor__tags {
+.blogcard-hor__tags {
   margin-top: 25px;
   padding: 0 15px 10px;
   display: flex;
@@ -137,18 +137,18 @@
     }
   }
 
-  .blogpost__img {
+  .blogcard__img {
     img {
       max-width: none;
       width: 100%;
     }
   }
 
-  .blogpost-hor {
+  .blogcard-hor {
     flex-direction: column;
   }
 
-  .blogpost-hor__img {
+  .blogcard-hor__img {
     width: 100%;
     img {
       max-width: none;
@@ -156,11 +156,11 @@
     }
   }
 
-  .blogpost-hor__content {
+  .blogcard-hor__content {
     width: 100%;
   }
 
-  .blogpost-hor__title {
+  .blogcard-hor__title {
     width: 100%;
     left: 0;
     font-size: 18px;
