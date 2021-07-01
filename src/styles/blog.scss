@@ -63,7 +63,7 @@
 
 .blogcard-hor {
   display: flex;
-  align-items: center;
+  // align-items: center;
   background-color: #F8F8F8;
 
   &:hover {
@@ -178,5 +178,9 @@
 
   .blog__filters {
     flex-direction: column;
+  }
+
+  .blog__pagination {
+    margin: 30px 0;
   }
 }

@@ -19,20 +19,38 @@ breadcrumbs:
     <div class="blog__filters">
       <div class="blog__filter">
         <div class="filter">
-          {{> switch label1="Новости" label2="События"}}
+          <!-- {{> switch label1="Новости" label2="События"}} -->
+          <div class="dropdown">
+            <div class="dropdown__value">
+              <span>Новости</span>
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12"><path d="M.333 5.5h10.209L6.167 1.125 6.72.5l5.417 5.417-5.417 5.416-.553-.625 4.375-4.375H.333V5.5z" fill="#262626"/></svg>
+            </div>
+            <div class="dropdown__item-menu-wrapper">
+              <div class="dropsown__item-scroll">
+                <div class="dropdown__item-menu">
+                  <div class="dropdown__item-option">
+                    <a href="#">Показать новости</a>
+                  </div>
+                  <div class="dropdown__item-option">
+                    <a href="#">Показать события</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="blog__filter">
         <div class="dropdown">
           <div class="dropdown__value">
-            <span>По дате буликации</span>
+            <span>По дате публикации</span>
             <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12"><path d="M.333 5.5h10.209L6.167 1.125 6.72.5l5.417 5.417-5.417 5.416-.553-.625 4.375-4.375H.333V5.5z" fill="#262626"/></svg>
           </div>
           <div class="dropdown__item-menu-wrapper">
             <div class="dropsown__item-scroll">
               <div class="dropdown__item-menu">
                 <div class="dropdown__item-option">
-                  <a href="#">По дате буликации</a>
+                  <a href="#">По дате публикации</a>
                 </div>
                 <div class="dropdown__item-option">
                   <a href="#">По названию</a>

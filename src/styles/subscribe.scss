@@ -134,6 +134,12 @@
   display: block;
 }
 
+@media screen and(max-width: 500px) {
+  .subscribe {
+    padding: 30px 0;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .subscribe__title {
     font-size: 20px;

@@ -4,8 +4,59 @@
   }
 }
 
+.b2b__qa {
+  margin-left: 16.6666666667%;
+}
+
 .b2b__form {
   padding: 100px 0;
   margin-top: 100px;
   background-color: #F8F8F8;
+
+  .qa-form__block:first-child {
+    width: 40%;
+    padding-right: 15px;
+  }
+
+  .qa-form__block:nth-child(2) {
+    width: 60%;
+    padding-left: 15px;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .b2b__qa {
+    margin-left: 0;
+  }
+
+  .qa-form {
+    flex-direction: column;
+  }
+
+  .b2b__form .qa-form__block:first-child {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .b2b__form .qa-form__block:nth-child(2) {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media screen and(max-width: 500px) {
+  .b2b .subheader__title {
+    font-size: 24px;
+  }
+
+  .b2b .secondary-title {
+    font-size: 20px;
+  }
+
+  .b2b__form {
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
