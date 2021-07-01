@@ -25,6 +25,7 @@
 .float-textarea label {
   font-size: 18px;
   position: absolute;
+  text-shadow: 1px 0 0 currentColor;
   transform-origin: top left;
   transform: translate(0, 16px) scale(1);
   transition: all .1s ease-in-out;
