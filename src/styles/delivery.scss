@@ -38,6 +38,7 @@
 .qa-form {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .qa-form__block {
@@ -53,6 +54,15 @@
 
   .float-textarea {
     height: 240px;
+  }
+}
+
+.qa-form__action {
+  width: 100%;
+  margin-top: 70px;
+  
+  .btn {
+    margin-bottom: 20px;
   }
 }
 
