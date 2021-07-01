@@ -109,6 +109,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // BLOGPOST SLIDER
+  const blogpostSliderBlock = document.querySelector('.blogpost-slider');
+  if (blogpostSliderBlock) {
+    const blogpostSlider = new Splide(blogpostSliderBlock, {
+      type: "loop",
+      perPage: 3,
+      perMove: 1,
+      gap: 30,
+      speed: 800,
+      flickMaxPages: 1,
+      pagination: false,
+      classes: {
+        arrows: "subcat-slider__arrows",
+        arrow: "subcat-slider__arrow",
+        prev: "subcat-slider__prev",
+        next: "subcat-slider__next",
+      },
+      breakpoints: {
+        992: {
+          perPage: 2,
+        },
+        768: {
+          perPage: 1,
+        }
+      }
+    });
+    blogpostSlider.mount();
+  }
+
   //Product slider
   const product = document.querySelector(".product-slider__main");
   if (product) {

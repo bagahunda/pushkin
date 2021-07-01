@@ -1,0 +1,149 @@
+.blogpost {
+  .blockquote {
+    padding: 20px 0 0;
+  }
+}
+
+.blogpost__hero-img {
+  margin-bottom: 20px;
+}
+
+.blogpost__title {
+  font-size: 40px;
+  margin: 15px 0 40px;
+  text-align: center;
+  text-transform: uppercase;
+
+  span {
+    color: #5100D3;
+  }
+}
+
+.blogpost__subtitle {
+  margin: 17px 16.6666666667% 19px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.blogpost__media {
+  display: flex;
+  margin-left: 16.6666666667%;
+
+  &--reverse {
+    margin-left: 0;
+    margin-right: 16.6666666667%;
+  }
+
+  p {
+    flex: 1;
+    margin-top: 0;
+  }
+}
+
+.blogpost__media-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #828282;
+  }
+}
+
+.blogpost__actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 16.6666666667% 60px;
+
+  span {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    svg {
+      width: 30px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.blogpost__product-slider {
+  padding: 70px 0 80px;
+  background-color: #F4F1EE;
+}
+
+.blogpost__product-slider-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blogpost__recomendations {
+  padding: 70px 0 80px;
+}
+
+.blogpost-slider {
+  width: calc(100% - 100px);
+  margin: 0 auto;
+}
+
+@media screen and(max-width: 1200px) {
+  .blogpost__actions {
+    margin: 30px 0 60px;
+  }
+
+  .blogpost__product-slider-title {
+    flex-direction: column;
+  }
+}
+
+@media screen and(max-width: 992px) {
+  .blogpost__media {
+    margin-left: 0;
+    flex-direction: column-reverse;
+
+    &--reverse {
+      margin-right: 0;
+      flex-direction: column;
+    }
+  }
+
+  .blogpost__media-img {
+    margin-bottom: 30px;
+  }
+
+  .blogpost__actions {
+    margin: 30px 0 60px;
+  }
+
+  .blogpost .blockquote {
+    margin-top: 60px;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .blogpost__actions {
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and(max-width: 500px) {
+  .blogpost__title {
+    font-size: 23px;
+  }
+
+  .blogpost__subtitle {
+    font-size: 20px;
+  }
+}
