@@ -441,6 +441,10 @@ button {
   font-weight: 300;
   text-transform: uppercase;
   color: #262626;
+
+  span {
+    color: #5100D3;
+  }
 }
 
 .input {
@@ -475,6 +479,31 @@ button {
 }
 .form__block + .form__block {
   margin-top: 80px;
+}
+
+.list, .blogpost ul {
+  list-style: none; 
+
+  li {
+    position: relative;
+    display: flex;
+    line-height: 1.5;
+
+    &:before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      left: -10px;
+      top: 0.6em;
+      border-radius: 50%;
+      background-color: #929292;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 @media screen and(max-width: 662px) {
