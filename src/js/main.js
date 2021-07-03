@@ -394,76 +394,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // MODAL
 
-  const Modal = function (selectorOrElement, userOptions) {
-    if (Array.isArray(selectorOrElement)) {
-      if (selectorOrElement.length) {
-        return selectorOrElement.map((item) => new Modal(item, userOptions));
-      }
+  // const Modal = function (selectorOrElement, userOptions) {
+  //   if (Array.isArray(selectorOrElement)) {
+  //     if (selectorOrElement.length) {
+  //       return selectorOrElement.map((item) => new Modal(item, userOptions));
+  //     }
 
-      return false;
-    }
+  //     return false;
+  //   }
 
-    const defaults = {};
+  //   const defaults = {};
 
-    this.options = Object.assign(defaults, userOptions);
+  //   this.options = Object.assign(defaults, userOptions);
 
-    const isString = typeof selectorOrElement === "string";
+  //   const isString = typeof selectorOrElement === "string";
 
-    let isBusy = false;
+  //   let isBusy = false;
 
-    const container = isString
-      ? document.querySelector(selectorOrElement)
-      : selectorOrElement;
+  //   const container = isString
+  //     ? document.querySelector(selectorOrElement)
+  //     : selectorOrElement;
 
-    const body = document.querySelector("body");
+  //   const body = document.querySelector("body");
 
-    const listener = function (event) {
-      if (event.target.dataset.close) {
-        close();
-        setTimeout(() => {
-          userOptions.onClose ? userOptions.onClose() : null;
-        }, 300);
-      }
-    };
+  //   const listener = function (event) {
+  //     if (event.target.dataset.close) {
+  //       close();
+  //       setTimeout(() => {
+  //         userOptions.onClose ? userOptions.onClose() : null;
+  //       }, 300);
+  //     }
+  //   };
 
-    const escListener = function (event) {
-      if (event.key === "Escape") {
-        close();
-      }
-    };
+  //   const escListener = function (event) {
+  //     if (event.key === "Escape") {
+  //       close();
+  //     }
+  //   };
 
-    container.addEventListener("click", listener);
+  //   container.addEventListener("click", listener);
 
-    function open() {
-      if (isBusy) return;
-      isBusy = true;
-      document.addEventListener("keydown", escListener);
-      container.style.display = "block";
-      setTimeout(() => {
-        body.classList.add("overflow");
-        isBusy = false;
-      }, 100);
-    }
-    function close() {
-      if (isBusy) return;
-      isBusy = true;
-      document.removeEventListener("keydown", escListener);
-      body.classList.remove("overflow");
-      setTimeout(() => {
-        container.style.display = "none";
-        isBusy = false;
-      }, 300);
-    }
-    function destroy() {
-      container.removeEventListener("click", listener);
-    }
+  //   function open() {
+  //     if (isBusy) return;
+  //     isBusy = true;
+  //     document.addEventListener("keydown", escListener);
+  //     container.style.display = "block";
+  //     setTimeout(() => {
+  //       body.classList.add("overflow");
+  //       isBusy = false;
+  //     }, 100);
+  //   }
+  //   function close() {
+  //     if (isBusy) return;
+  //     isBusy = true;
+  //     document.removeEventListener("keydown", escListener);
+  //     body.classList.remove("overflow");
+  //     setTimeout(() => {
+  //       container.style.display = "none";
+  //       isBusy = false;
+  //     }, 300);
+  //   }
+  //   function destroy() {
+  //     container.removeEventListener("click", listener);
+  //   }
 
-    return {
-      open,
-      close,
-      destroy,
-    };
-  };
+  //   return {
+  //     open,
+  //     close,
+  //     destroy,
+  //   };
+  // };
 
   // SELECT
 
@@ -643,6 +643,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleFocus(e) {
       const target = e.target;
       target.parentNode.classList.add("active");
+      target.setAttribute('placeholder', target.getAttribute('data-placeholder'));
     }
 
     function handleBlur(e) {
@@ -650,6 +651,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!target.value) {
         target.parentNode.classList.remove("active");
       }
+      target.removeAttribute('placeholder');
     }
 
     function bindEvents(element) {
@@ -716,6 +718,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subscribeRemoveBtns = document.querySelectorAll('.js-subscribe-remove');
   const changeAddressButton = document.querySelector('.js-change-address');
   const resetPasswordButton = document.querySelector('.js-reset-password');
+  const qaModalBlock = document.querySelector('#qaModal');
 
   const debounce = function (fn) {
     let timeout;
@@ -982,6 +985,15 @@ document.addEventListener("DOMContentLoaded", () => {
         parent.classList.add('cabinet__form--password-edit');
         e.target.textContent = "Сохранить пароль"
       }
+    })
+  }
+
+  if (qaModalBlock) {
+    const qaModal = new bootstrap.Modal(qaModalBlock);
+    const form = document.querySelector('#qa-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      qaModal.show();
     })
   }
 

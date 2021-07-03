@@ -35,10 +35,10 @@
 }
 
 .blogcard__title {
-  margin: 15px 0 15px;
-  padding: 0 15px;
+  padding: 15px;
   flex-grow: 1;
   font-weight: 500;
+  background-color: #f8f8f8;
 }
 
 .blogcard__date {
@@ -174,10 +174,6 @@
 @media screen and(max-width: 460px) {
   .blog .subheader__title {
     font-size: 34px;
-  }
-
-  .blog__filters {
-    flex-direction: column;
   }
 
   .blog__pagination {

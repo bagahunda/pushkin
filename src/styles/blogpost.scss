@@ -20,7 +20,7 @@
 }
 
 .blogpost__subtitle {
-  margin: 17px 16.6666666667% 19px;
+  margin: 17px 0 19px;
   text-transform: uppercase;
   font-size: 36px;
   font-weight: 400;
@@ -72,6 +72,19 @@
   }
 }
 
+.blogpost .share {
+  margin-top: 20px;
+}
+
+.blogpost .share span {
+  border: none;
+  margin-top: 0;
+}
+
+.blogpost .share__menu {
+  top: 90%;
+}
+
 .blogpost__product-slider {
   padding: 70px 0 80px;
   background-color: #F4F1EE;
@@ -90,6 +103,51 @@
 .blogpost-slider {
   width: calc(100% - 100px);
   margin: 0 auto;
+
+  .splide__slide {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  
+      &:hover {
+        z-index: 10;
+        .blogcard__title, .blogcard__desc, .blogcard__tags {
+          transition: all 0.3s ease-in-out;
+          transform: translateY(-5px);
+        }
+      }
+      
+      &:hover::after {
+          opacity: 1;
+      }
+  
+      &:hover {
+        .idea-card__title,
+        .idea-card__link {
+          transform: translateY(-5px);
+        }
+      }
+  }
+}
+
+.blogpost__link {
+  &:hover {
+    color: #5100D3;
+
+    path {
+      fill: #5100D3;
+    }
+  }
 }
 
 @media screen and(max-width: 1200px) {

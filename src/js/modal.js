@@ -1550,4 +1550,8 @@
    */
 
   defineJQueryPlugin(Modal);
+
+  return Modal;
+
+  
 })))

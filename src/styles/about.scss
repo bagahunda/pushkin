@@ -133,6 +133,14 @@
 }
 
 @media screen and(max-width: 992px) {
+  .about__main {
+    padding-top: 30px;
+  }
+
+  .about .subheader {
+    margin-bottom: 0 !important;
+  }
+ 
   .media {
     margin: 30px 0;
   }

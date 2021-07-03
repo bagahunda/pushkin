@@ -2660,28 +2660,28 @@
           <div class="delivery__qa-items">
             <div class="delivery__qa-item">
               <h2 class="secondary-title">Если есть вопросы - <span>задайте их нам</span></h2>
-              <form class="form qa-form">
+              <form class="form qa-form" id="qa-form">
                 <div class="qa-form__block">
                   <div class="form__row">
                     <div class="float-input ">
                       <label for="qaName">Как вас зовут</label>
-                      <input id="qaName" type="text" value="">
+                      <input id="qaName" type="text" value="" data-placeholder="">
                     </div>              </div>
                   <div class="form__row">
                     <div class="float-input ">
                       <label for="qaEmail">Ваша почта</label>
-                      <input id="qaEmail" type="email" value="">
+                      <input id="qaEmail" type="email" value="" data-placeholder="">
                     </div>              </div>
                   <div class="form__row">
                     <div class="float-input ">
                       <label for="qaPhone">Ваш телефон</label>
-                      <input id="qaPhone" type="phone" value="">
+                      <input id="qaPhone" type="phone" value="" data-placeholder="">
                     </div>              </div>
                 </div>
                 <div class="qa-form__block">
                   <div class="float-textarea">
                     <label for="qaComment">Ваш вопрос или предложение</label>
-                    <textarea id="qaComment" type=""></textarea>
+                    <textarea id="qaComment" type="" data-placeholder="Напиште нам все что вы хотите нам сказать"></textarea>
                   </div>
                 </div>
                 <div class="qa-form__action">
@@ -2926,6 +2926,27 @@
           </div>
         </div>
       </div>
+    </div><div class="modal fade modal--qa-modal" id="qaModal">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title modal-title--light">Возврат товара</h5>
+            <button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                <path
+                  d="M11.41 9l7.29-7.29A1 1 0 0017.29.3L10 7.59 2.71.29A1 1 0 001.3 1.7L8.59 9l-7.3 7.29A1.001 1.001 0 102.7 17.7l7.3-7.29 7.29 7.29a1 1 0 001.41-1.41L11.41 9z"
+                  fill="#fff" />
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            Ваше обращение отправлено
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn--outline" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
     </div>    <div class="subscribe">
       <div class="container">
         <h2 class="subscribe__title text-center">подпишитесь на нашу рассылку</h2>
@@ -3072,10 +3093,10 @@
               <form class="form__row form__row--double" id="loginForm">
                 <div class="float-input ">
                   <label for="loginEmail">Ваша почта</label>
-                  <input id="loginEmail" type="email" value="">
+                  <input id="loginEmail" type="email" value="" data-placeholder="">
                 </div>            <div class="float-input ">
                   <label for="loginPassword">Ваш пароль</label>
-                  <input id="loginPassword" type="password" value="">
+                  <input id="loginPassword" type="password" value="" data-placeholder="">
                 </div>          </form>
             </div>
           </div>
@@ -3106,26 +3127,26 @@
               <div class="form__row form__row--double">
                 <div class="float-input ">
                   <label for="registerName">Ваше имя</label>
-                  <input id="registerName" type="text" value="">
+                  <input id="registerName" type="text" value="" data-placeholder="">
                 </div>            <div class="float-input ">
                   <label for="registerSurname">Ваша фамилия</label>
-                  <input id="registerSurname" type="text" value="">
+                  <input id="registerSurname" type="text" value="" data-placeholder="">
                 </div>          </div>
               <div class="form__row form__row--double">
                 <div class="float-input ">
                   <label for="registerEmail">Ваша почта</label>
-                  <input id="registerEmail" type="email" value="">
+                  <input id="registerEmail" type="email" value="" data-placeholder="">
                 </div>            <div class="float-input ">
                   <label for="registerBirthday">Дата рождения</label>
-                  <input id="registerBirthday" type="text" value="">
+                  <input id="registerBirthday" type="text" value="" data-placeholder="">
                 </div>          </div>
               <div class="form__row form__row--double">
                 <div class="float-input ">
                   <label for="registerPassword">Ваш пароль</label>
-                  <input id="registerPassword" type="password" value="">
+                  <input id="registerPassword" type="password" value="" data-placeholder="">
                 </div>            <div class="float-input ">
                   <label for="registerPasswordConfirm">Повторите пароль</label>
-                  <input id="registerPasswordConfirm" type="password" value="">
+                  <input id="registerPasswordConfirm" type="password" value="" data-placeholder="">
                 </div>          </div>
               <div class="form__row form__row--double">
                 <div>
@@ -3165,7 +3186,7 @@
       </div>
     </div>    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./dist/js/accordeon.min.js"></script>
-    <script src="./dist/js/modal.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
     <script src="./dist/js/main.js?v=1.0.0"></script>
 </body>
 </html>

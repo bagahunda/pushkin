@@ -67,7 +67,7 @@ breadcrumbs:
       <div class="delivery__qa-items">
         <div class="delivery__qa-item">
           <h2 class="secondary-title">Если есть вопросы - <span>задайте их нам</span></h2>
-          <form class="form qa-form">
+          <form class="form qa-form" id="qa-form">
             <div class="qa-form__block">
               <div class="form__row">
                 {{> floatInput type="text" id="qaName" label="Как вас зовут"}}
@@ -80,7 +80,7 @@ breadcrumbs:
               </div>
             </div>
             <div class="qa-form__block">
-              {{> floatTextarea id="qaComment" label="Ваш вопрос или предложение"}}
+              {{> floatTextarea id="qaComment" label="Ваш вопрос или предложение" placeholder="Напиште нам все что вы хотите нам сказать"}}
             </div>
             <div class="qa-form__action">
               <button type="submit" class="btn btn--outline">Отправить</button>
@@ -111,3 +111,4 @@ breadcrumbs:
 </div>
 
 {{> visit }}
+{{> qaModal }}
