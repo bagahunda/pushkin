@@ -1,0 +1,58 @@
+.contacts {
+  overflow: hidden;
+}
+
+.contacts__info {
+  .col-md-6 {
+    margin-bottom: 30px;
+  }
+
+  .secondary-title {
+    margin-bottom: 40px;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+}
+
+.contacts__block-title {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #5100D3;
+}
+
+.contacts__bank {
+  margin-top: 50px;
+
+  span {
+    text-shadow: 1px 0 0 currentColor;
+  }
+}
+
+.contacts__map {
+  position: relative;
+  height: 700px;
+  background: url('../images/map-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  img {
+    width: 38px;
+  }
+}
+
+@media screen and(max-width: 992px) {
+  .contacts__map {
+    height: 300px;
+  }
+}

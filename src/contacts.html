@@ -1,0 +1,125 @@
+---
+layout: default
+title: Oops
+breadcrumbs:
+  -
+    url: '/'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Контакты'
+---
+
+{{> breadcrumbs }}
+
+<div class="contacts delivery">
+  {{> subheader title="Контакты" lead="Сувенирную продукцию вы также можете приобрести в сувенирном магазине<br />Государственного музея изобразительных искусств им. А.С. Пушкина (Москва)"}}
+
+  <div class="contacts__info">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <h2 class="secondary-title">Служба заботы о покупателях</h2>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <span class="contacts__block-title">Телефоны:</span>
+              <p>+7 (495)123-45-67</p>
+              <p>+7 (495)123-45-67</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <span class="contacts__block-title">Email:</span>
+              <p>info@shop.puskin.ru</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <span class="contacts__block-title">Время работы:</span>
+              <p>Пн–Пт: 9:00–18:00</p>
+              <p>Сб-Вс: выходной</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <span class="contacts__block-title">Адрес:</span>
+              <p>ул. Волхонка, 12, </p>
+              <p>Москва, 119019</p>
+            </div>
+          </div>
+          <div class="contacts__bank">
+            <div class="accordeon">
+              <div class="accordeon__item">
+                <h2 class="accordeon__header">
+                  <button class="accordeon__trigger">
+                    Реквизиты
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 22"><path d="M.667 10h20.416l-8.75-8.75L13.44 0l10.833 10.833L13.44 21.667l-1.107-1.25 8.75-8.75H.667V10z" fill="#262626"/></svg>
+                  </button> 
+                </h2>
+                <div class="accordeon__panel">
+                  <p>
+                    <p>Общество с ограниченной ответственностью «ЭйБиЭс»</p>
+                    <p><span>Юридический адрес:</span> 109316, г. Москва, ул. Талалихина, д.41 стр.29</p>
+                    <p><span>ОГРН:</span> 1097746161611</p>
+                    <p><span>ИНН / КПП:</span> 7705884383 / 772201001</p>
+                    <p><span>ОКПО:</span> 60505150</p>
+                    <p><span>р/сч.:</span>  40702.810.0.01040000800</p>
+                    <p><span>к/с.:</span> 30101810845250000685</p>
+                    <p><span>БИК:</span> 044525685</p>
+                    <p><span>Банк:</span> «СДМ - Банк» (ПАО)</p>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="contacts__map">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="delivery__qa">
+    <div class="container">
+      <div class="delivery__qa-items">
+        <div class="delivery__qa-item">
+          <h2 class="secondary-title">Если есть вопросы - <span>задайте их нам</span></h2>
+          <form class="form qa-form" id="qa-form">
+            <div class="qa-form__block">
+              <div class="form__row">
+                {{> floatInput type="text" id="qaName" label="Как вас зовут"}}
+              </div>
+              <div class="form__row">
+                {{> floatInput type="email" id="qaEmail" label="Ваша почта"}}
+              </div>
+              <div class="form__row">
+                {{> floatInput type="phone" id="qaPhone" label="Ваш телефон"}}
+              </div>
+            </div>
+            <div class="qa-form__block">
+              {{> floatTextarea id="qaComment" label="Ваш вопрос или предложение" placeholder="Напиште нам все что вы хотите нам сказать"}}
+            </div>
+            <div class="qa-form__action">
+              <button type="submit" class="btn btn--outline">Отправить</button>
+              <label class="check">
+                <input
+                  type="checkbox"
+                  class="check__input"
+                  id="agreement"
+                  name="agreement"
+                  value="yes"
+                />
+                <span class="check__box"></span>
+                Я прочитал и согласен с правилами «Соглашение на обработку персональных данных»
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="delivery__qa-item">
+          <h2 class="secondary-title">
+            Ответы на <span>часто задаваемые</span> вопросы
+          </h2>
+          {{> qaAccordeon }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

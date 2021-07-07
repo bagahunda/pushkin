@@ -1,0 +1,13 @@
+.status--404 .status__header > img:first-of-type {
+  display: none;
+}
+
+@media screen and(max-width: 1200px) {
+  .status--404 .status__header > img:first-of-type {
+    display: block;
+  }
+
+  .status--404 .status__header-text img {
+    display: none;
+  }
+}

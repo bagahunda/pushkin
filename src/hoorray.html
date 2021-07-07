@@ -1,0 +1,57 @@
+---
+layout: default
+title: Hooray
+breadcrumbs:
+  -
+    url: '/'
+    title: 'Главная'
+  -
+    url: '#'
+    title: 'Корзина'
+images:
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+---
+
+{{> breadcrumbs }}
+
+<div class="status">
+  {{> subheader title="Ваш заказ <span>оформлен</span>" lead="Спасибо, что выбрали наш магазин. В ближайшее время наш менеджер свяжется с вами для уточнения деталей дальнейших действий."}}
+  <div class="status__header">
+    <div class="status__header-img">
+      <img src="./dist/images/hoorray.jpg" alt="">
+    </div>
+    <div class="status__header-text">
+      <h1>Ура!</h1>
+      <h2>Заказ <span>успешно</span> оформлен</h2>
+      <h3>Спасибо, что выбрали наш магазин</h3>
+      <p>Ваш заказ №132323 оформлен успешно.</p>
+      <p>Вы можете просмотреть его в Личном кабинете.</p>
+      <div class="status__header-actions">
+        <a href="./cabinet.html" class="btn btn--outline">Личный кабинет</a>
+        <a href="./catalog.html" class="btn btn--outline">Каталог</a>
+      </div>
+    </div>
+  </div>
+  <div class="status__slider">
+    <div class="container">
+      <h2 class="secondary-title">Персональные рекомендации</h2>
+      {{> innerSlider type="product"}}
+    </div>
+  </div>
+  <div class="status__slider status__slider--light">
+    <div class="container">
+      <h2 class="secondary-title">Просмотренные товары</h2>
+      {{> innerSlider type="product" theme="light"}}
+    </div>
+  </div>
+  {{> visit}}
+</div>

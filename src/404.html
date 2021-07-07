@@ -1,0 +1,47 @@
+---
+layout: default
+title: Oops
+breadcrumbs:
+  -
+    url: '/'
+    title: 'Главная'
+  -
+    url: '#'
+    title: '404'
+images:
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+  -
+    img: 'product1'
+---
+
+{{> breadcrumbs }}
+
+<div class="status status--404">
+  {{> subheader title="такой страницы <span>не существует</span>"}}
+  <div class="status__header">
+    <img src="./dist/images/404-title.jpg" alt="">
+    <div class="status__header-img">
+      <img src="./dist/images/404.jpg" alt="">
+    </div>
+    <div class="status__header-text">
+      <img src="./dist/images/404-title.jpg" alt="">
+      <h2>упс, что-то <span>пошло</span> не так</h2>
+      <p>Кажется, что-то пошло не так и вы попали на страницу 404! Не пугайтесь - возможно там было что-то ненужное или некрасивое ), но у нас есть еще много красивых и удивительных вещей. Вы можете прямо сейчас перейти на Главную или воспользоваться поиском. Ну, как вариант, посмотрите на наши популярные товары или интересные новости ниже</p>      
+    </div>
+  </div>
+  {{> leaders }}
+  <div class="status__slider status__slider--grey">
+    <div class="container">
+      <h2 class="secondary-title">Вам так же может быть интересно</h2>
+      {{> blogpostSlider }}
+    </div>
+  </div>
+  {{> visit}}
+</div>

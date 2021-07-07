@@ -379,17 +379,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ACCORDEON
 
-  const accordeonContainer = document.querySelector(".accordeon");
+  const accordeonContainer = document.querySelectorAll(".accordeon");
 
-  if (accordeonContainer) {
-    const accordeon = new Accordion(accordeonContainer, {
-      elementClass: "accordeon__item",
-      triggerClass: "accordeon__trigger",
-      panelClass: "accordeon__panel",
-      activeClass: "accordeon__item--active",
-      showMultiple: true,
-    });
-    accordeon.open(1);
+  if (accordeonContainer.length > 0) {
+    accordeonContainer.forEach((item, index) => {
+      window[`accordeon${index}`] = new Accordion(item, {
+        elementClass: "accordeon__item",
+        triggerClass: "accordeon__trigger",
+        panelClass: "accordeon__panel",
+        activeClass: "accordeon__item--active",
+        showMultiple: true,
+      });
+      window[`accordeon${index}`].open(1);
+    })
   }
 
   // MODAL
@@ -719,6 +721,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const changeAddressButton = document.querySelector('.js-change-address');
   const resetPasswordButton = document.querySelector('.js-reset-password');
   const qaModalBlock = document.querySelector('#qaModal');
+  const contactBlock = document.querySelector('.contacts');
 
   const debounce = function (fn) {
     let timeout;
@@ -821,6 +824,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", function () {
     getDimensionsDebounce();
+    debounce(setMapWidth());
     debounce(setBodyTopPadding());
     debounce(addScrollListener());
   });
@@ -997,7 +1001,54 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  if (contactBlock) {
+    let map;
+    function initMap() {
+      const pos = {lat: 55.74763125647648, lng: 37.60503481134306}
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 16,
+        mapId: '2ce0e883e173118e',
+        disableDefaultUI: true,
+      });
+
+      const svgMarker = {
+        path: "M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z",
+        fillColor: "blue",
+        fillRule: "evenodd",
+        clipRule:"evenodd",
+        rotation: 0,
+        scale: 1,
+        anchor: new google.maps.Point(19,25),
+      };
+
+      const marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        icon: './dist/images/pin.svg'
+      })
+    } 
+    initMap();
+  }
+
+  function setMapWidth() {
+    if (contactBlock) {
+      const mapBlock = contactBlock.querySelector('.contacts__map');
+      const windowWidth = +window.innerWidth;
+      if (windowWidth < 992) {
+        mapBlock.style.width = '100%';
+        return;  
+      }
+      const container = contactBlock.querySelector('.container');
+      const containerWidth = +container.clientWidth;
+      const mapWidth = +containerWidth / 2;
+      const padding = (windowWidth - containerWidth) / 2;
+      mapBlock.style.width = `${mapWidth + padding}px`;
+    }
+  }
+
   getDimensions();
   setBodyTopPadding();
   addScrollListener();
+  setMapWidth();
 })
