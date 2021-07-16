@@ -8,6 +8,18 @@
   position: relative;
   transition: all 0.3s ease-in-out;
 
+  &:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #828282;
+
+    .cart__item-remove {
+      position: absolute;
+      right: 0;
+      bottom: 20px;
+    }
+  }
+
+  
   &--removed {
     opacity: 0;
     transform: translateX(-50px);

@@ -380,8 +380,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ACCORDEON
 
   const accordeonContainer = document.querySelectorAll(".accordeon");
+  const productAccorderon = document.querySelector(".product__accordeon .accordeon");
 
-  if (accordeonContainer.length > 0) {
+  if (accordeonContainer.length > 0 && !productAccorderon) {
     accordeonContainer.forEach((item, index) => {
       window[`accordeon${index}`] = new Accordion(item, {
         elementClass: "accordeon__item",
@@ -392,6 +393,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       window[`accordeon${index}`].open(1);
     })
+  }
+
+  if (productAccorderon) {
+    const acc = new Accordion(productAccorderon, {
+      elementClass: "accordeon__item",
+        triggerClass: "accordeon__trigger",
+        panelClass: "accordeon__panel",
+        activeClass: "accordeon__item--active",
+        showMultiple: true,
+    });
+    acc.openAll();
   }
 
   // MODAL
@@ -798,9 +810,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (top < topTrigger) {
           topBlock.classList.add("top--pinned");
           topBlock.style.top = 0;
+          const menu = document.querySelectorAll('.nav.nav--desktop .nav__link--submenu .submenu-wrapper');
+            menu.forEach(item => {
+              item.style.display = '';
+            })
         } else {
           topBlock.classList.remove("top--pinned");
           topBlock.style.top = `-${topHeight}px`;
+          if (window.innerWidth > 992) {
+            const menu = document.querySelectorAll('.nav.nav--desktop .nav__link--submenu .submenu-wrapper');
+            menu.forEach(item => {
+              item.style.display = 'none';
+            })
+          }
         }
         topTrigger = top;
       } else {

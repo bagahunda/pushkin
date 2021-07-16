@@ -71,20 +71,24 @@
   }
 
   &:hover .orders-tabel__actions-dropdown {
-    display: flex;
+    opacity: 1;
+    pointer-events: all;
+    right: 100%;
   }
 }
 
 .orders-tabel__actions-dropdown {
   position: absolute;
-  right: 100%;
+  right: 160%;
   top: 0;
   display: flex;
   flex-direction: column;
   white-space: nowrap;
   background-color: #ffffff;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease-in-out;
 
   span {
     padding: 8px 20px;
@@ -148,6 +152,10 @@
   }
   .orders-table > tbody > tr {
     display: block;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #d3d3d3;
+    }
   }
   .orders-table > tbody > tr + tr {
     margin-top: 20px;
@@ -158,8 +166,19 @@
     display: flex;
     flex-direction: column;
     border: 0;
-    border-bottom: 1px solid #d3d3d3;
     width: 100%;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &:before {
+        width: 50%;
+        margin: 0 0 0 -10px;
+        white-space: normal;
+      }
+    }
   }
   .orders-table > tbody > tr > td:before {
     content: attr(data-thead);
@@ -167,14 +186,16 @@
     margin: 0 -10px;
     width: 100%;
   }
-  .orders-table > tbody > tr > td:first-child {
-    border-top: 1px solid #ededed;
-  }
 
   .orders-table > tbody > tr > td:last-child {
     flex-direction: row;
     justify-content: flex-end;
     border-bottom: none;
+  }
+
+  .orders-table > tbody > tr > td:nth-child(3),
+  .orders-table > tbody > tr > td:nth-child(4) {
+    display: none;
   }
 
   .orders-table__actions {

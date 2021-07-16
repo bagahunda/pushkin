@@ -75,6 +75,9 @@
 }
 
 @media screen and(max-width: 1200px) {
+  .status h2 {
+    display: none;
+  }
   .status__header {
     flex-direction: column;
   }

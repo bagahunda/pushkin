@@ -89,6 +89,10 @@
 }
 
 @media  screen and (max-width: 767px) {
+  .cta {
+    margin-top: 0;
+    padding: 0 12px 20px;
+  }
   .main-slide {
     display: flex;
     flex-direction: column-reverse;
@@ -103,9 +107,9 @@
   .main-slide__img {
     width: 100%;
   }
-  .main-slider__pagination {
-    margin-top: 20px;
-  }
+  // .main-slider__pagination {
+  //   margin-top: 20px;
+  // }
 }
 
 @media  screen and (max-width: 480px) {
