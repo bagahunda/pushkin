@@ -41,6 +41,8 @@
 }
 .mobile-search {
   display: none;
+  width: 30px;
+  height: 30px;
   svg {
     width: 30px;
     top: 50%;
@@ -87,12 +89,14 @@
 .search-result__price {
   font-size: 12px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .header__icons {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  flex-wrap: nowrap;
 }
 
 .mobile-menu {
@@ -108,6 +112,7 @@
 
 .header__icons-items {
   display: flex;
+  flex-wrap: nowrap;
 }
 
 .header__icons-item {
