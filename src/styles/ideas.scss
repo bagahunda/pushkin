@@ -282,6 +282,17 @@
   }
 }
 
+@media screen and (max-width: 480px) {
+  .splide__slide {
+    background-color: #ffffff;
+    .idea-card__title,
+    .idea-card__link {
+      top: 0;
+      opacity: 1;
+    }
+  }
+}
+
 @media screen and (max-width: 460px) {
   .ideas {
     padding-bottom: 50px;

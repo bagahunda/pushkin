@@ -8,9 +8,8 @@
 .filters__items {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
   background-color: #ffffff;
-  border-bottom: 1px solid #E0E0E0;
   transition: all 0.3s ease-in-out;
 }
 
@@ -23,6 +22,12 @@
   border-bottom: 1px solid #262626;
   cursor: pointer;
 
+  &--button {
+    border: none;
+    justify-content: center;
+    display: none;
+  }
+
   &:hover .filters__item-menu-wrapper {
     display: block;
   }
@@ -30,6 +35,13 @@
   svg {
     width: 12px;
   }
+}
+
+.filters__button {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .filters__item-menu-wrapper {
@@ -86,6 +98,9 @@
 }
 
 @media screen and(max-width: 992px) {
+  .filters__button {
+    display: none;
+  }
   .filters__item-menu-wrapper {
     position: relative;
     top: 0;
@@ -117,6 +132,10 @@
     margin-bottom: 20px;
     width: 90%;
     flex-wrap: wrap;
+
+    &--button {
+      display: flex;
+    }
 
     &:hover .filters__item-menu-wrapper {
       display: none;
