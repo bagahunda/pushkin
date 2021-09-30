@@ -1,63 +1,55 @@
 @font-face {
-  font-family: "AkzidenzGrotesk-ext";
-  src: url("../fonts/akzidenzgroteskpro-ext.woff2") format("woff2");
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "AkzidenzGrotesk";
-  src: url("../fonts/akzidenzgroteskpro-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "AkzidenzGrotesk";
-  src: url("../fonts/akzidenzgroteskpro-mdex.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "AkzidenzGrotesk";
-  src: url("../fonts/akzidenzgroteskpro-mdit.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "AkzidenzGrotesk";
-  src: url("../fonts/akzidenzgroteskpro-lightex.woff2") format("woff2");
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "AkzidenzGrotesk";
-  src: url("../fonts/akzidenzgroteskpro-ligextit.woff2") format("woff2");
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-LightItalic.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "AkzidenzGrotesk";
-  src: url("../fonts/akzidenzgroteskpro-it.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-BoldItalic.woff2") format("woff2");
+  font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "AkzidenzGrotesk";
-  src: url("../fonts/akzidenzgroteskpro-boldex.woff2") format("woff2");
-  font-weight: 700;
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }

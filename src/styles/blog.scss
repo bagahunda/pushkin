@@ -37,7 +37,7 @@
 .blogcard__title {
   padding: 15px;
   flex-grow: 1;
-  font-weight: 500;
+  font-weight: 600;
   background-color: #f8f8f8;
 }
 
@@ -50,6 +50,7 @@
 .blogcard__text {
   margin-top: 5px;
   padding: 0 15px;
+  font-weight: 300;
 }
 
 .blogcard__tags {
@@ -97,7 +98,7 @@
   position: relative;
   left: -280px;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
 
   span {
     color: #5100D3;
@@ -108,6 +109,7 @@
   margin-top: 15px;
   padding: 0 15px;
   font-size: 14px;
+  font-weight: 600;
   color: #828282;
 }
 
@@ -115,6 +117,7 @@
   margin-top: 30px;
   padding: 0 15px;
   flex-grow: 1;
+  font-weight: 300;
 }
 
 .blogcard-hor__tags {
