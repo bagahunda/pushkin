@@ -9,7 +9,7 @@
 }
 
 .subscribe__title {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 36px;
   line-height: 46px;
   text-align: center;
@@ -94,7 +94,9 @@
 }
 
 .check {
-  padding-left: 1.2em;
+  padding-left: 1.4em;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .check__input {
@@ -107,10 +109,10 @@
 
 .check__box {
   position: absolute;
-  margin-left: -1.2em;
+  margin-left: -1.4em;
   margin-top: 0.4em;
-  width: 0.7em;
-  height: 0.7em;
+  width: 1em;
+  height: 1em;
   box-shadow: 0 0 0 0.1em #262626;
   background-color: transparent;
 

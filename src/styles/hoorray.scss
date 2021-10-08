@@ -1,6 +1,5 @@
-.status__header {
+.status__header .container {
   display: flex;
-  padding: 0 80px;
 }
 
 .status__header-img, .status__header-text {
@@ -80,7 +79,7 @@
   .status h2 {
     display: none;
   }
-  .status__header {
+  .status__header .container {
     flex-direction: column;
   }
 
@@ -106,9 +105,6 @@
 }
 
 @media screen and(max-width: 510px) {
-  .status__header {
-    padding: 0 15px;
-  }
   .status__header-actions {
     flex-direction: column;
     align-items: flex-start;
